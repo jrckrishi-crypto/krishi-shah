@@ -134,7 +134,7 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 .doorframe .street{position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(90deg,#9aa5b5 0 22%,#f0b8a0 22% 48%,#8f9cb4 48% 70%,var(--red) 70%);clip-path:polygon(0 30%,22% 30%,22% 0,48% 0,48% 20%,70% 20%,70% 8%,100% 8%,100% 100%,0 100%)}
 .doorframe .pave{position:absolute;left:0;right:0;bottom:0;height:12%;background:#cfd5de;border-top:2px solid var(--ink)}
 
-.typecase .tray{position:absolute;left:calc(var(--u)*-1.5);right:calc(var(--u)*-1.5);top:0;height:calc(var(--u)*10);border:2px solid var(--ink);background:url(assets/letter-k.jpg) center 30%/150% auto #fff;overflow:hidden;padding:0;display:block}
+.typecase .tray{position:absolute;left:calc(var(--u)*-1.5);right:calc(var(--u)*-1.5);top:0;height:calc(var(--u)*10);border:2px solid var(--ink);background:url(letter-k.jpg) center 30%/150% auto #fff;overflow:hidden;padding:0;display:block}
 .typecase .tray::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(var(--u)*5),var(--wood) calc(var(--u)*5) calc(var(--u)*5.6)),repeating-linear-gradient(0deg,transparent 0 calc(var(--u)*3.2),var(--wood) calc(var(--u)*3.2) calc(var(--u)*3.8));border:calc(var(--u)*.6) solid var(--wood)}
 .typecase .cab{position:absolute;inset:calc(var(--u)*10) 0 0 0;background:var(--grain),linear-gradient(90deg,#8a5530,#a86c3d 40%,#8a5530);background-size:calc(var(--u)*30) calc(var(--u)*12),auto;border:2px solid var(--ink);display:grid;grid-template-rows:repeat(4,1fr);gap:calc(var(--u)*.8);padding:calc(var(--u)*1)}
 .drawer{position:relative;border:1.5px solid var(--ink);background:var(--grain),linear-gradient(#a8703f,#87522c);background-size:calc(var(--u)*26) calc(var(--u)*10),auto;display:grid;place-items:center;padding:0;transition:transform .2s,box-shadow .2s;box-shadow:inset 0 calc(var(--u)*-.4) 0 rgba(0,0,0,.25)}
@@ -223,7 +223,7 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 .cork h2{grid-column:1/-1;margin:0;border-radius:10px;font-family:var(--f-display);font-weight:400;font-size:28px;color:#2a1f1a;background:var(--paper);justify-self:start;padding:2px 12px;border:2px solid #000}
 .cork .btn{grid-column:1/-1;justify-self:start}
 @media (max-width:700px){.cork{grid-template-columns:1fr}}
-.zine{position:absolute;width:calc(var(--u)*13);height:calc(var(--u)*18.5);border:2px solid var(--ink);background:url(assets/zine/1.jpg) right center/auto 100% #fff;padding:0;box-shadow:calc(var(--u)*.5) calc(var(--u)*.5) 0 rgba(27,22,38,.25)}
+.zine{position:absolute;width:calc(var(--u)*13);height:calc(var(--u)*18.5);border:2px solid var(--ink);background:url(zine-1.jpg) right center/auto 100% #fff;padding:0;box-shadow:calc(var(--u)*.5) calc(var(--u)*.5) 0 rgba(27,22,38,.25)}
 .zine::before{content:"";position:absolute;left:calc(var(--u)*.6);top:30%;height:40%;width:2px;border-top:calc(var(--u)*1) solid #8a93a6;border-bottom:calc(var(--u)*1) solid #8a93a6}
 .ledge{position:absolute;height:calc(var(--u)*1.8);background:linear-gradient(#b27744,#8a5530);border:2px solid var(--ink)}
 .bunting{position:absolute;overflow:visible}
@@ -387,9 +387,9 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
       </div>
 
       <svg id="rope" viewBox="0 0 286 100" preserveAspectRatio="none" aria-hidden="true"><path d="M86 15 Q123 21 160 15" fill="none" stroke="#1b1626" stroke-width=".35"/><circle cx="86" cy="15" r=".8" fill="#1b1626"/><circle cx="160" cy="15" r=".8" fill="#1b1626"/></svg>
-      <button class="print obj stag" style="--x:89;--y:16.6;--r:-2deg;--i:3" data-open="fox" data-variant="0" aria-label="Open The quick brown fox, ink black"><img src="assets/fox-1.jpg" alt=""></button>
-      <button class="print obj stag" style="--x:112.5;--y:18.4;--r:1.5deg;--i:4" data-open="fox" data-variant="1" aria-label="Open The quick brown fox, plum on lime"><img src="assets/fox-2.jpg" alt=""></button>
-      <button class="print obj stag" style="--x:136;--y:17;--r:-1deg;--i:5" data-open="fox" data-variant="2" aria-label="Open The quick brown fox, red on sky"><img src="assets/fox-3.jpg" alt=""></button>
+      <button class="print obj stag" style="--x:89;--y:16.6;--r:-2deg;--i:3" data-open="fox" data-variant="0" aria-label="Open The quick brown fox, ink black"><img src="fox-1.jpg" alt=""></button>
+      <button class="print obj stag" style="--x:112.5;--y:18.4;--r:1.5deg;--i:4" data-open="fox" data-variant="1" aria-label="Open The quick brown fox, plum on lime"><img src="fox-2.jpg" alt=""></button>
+      <button class="print obj stag" style="--x:136;--y:17;--r:-1deg;--i:5" data-open="fox" data-variant="2" aria-label="Open The quick brown fox, red on sky"><img src="fox-3.jpg" alt=""></button>
       <div class="p stag" style="--x:111;--y:35;--w:26;--h:6;--i:6">
         <span class="tag" style="left:0;top:0"><b>The quick brown fox</b>3 colourways on the line</span>
         <button class="plus" data-plus="fox" aria-pressed="false" aria-label="Add The quick brown fox to your list" style="right:calc(var(--u)*-3);top:calc(var(--u)*-1.5)">+</button>
@@ -407,7 +407,7 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
       <div class="p bubble stag" style="--x:199;--y:22;--w:33;--h:8;--i:9">Fresh prints today! Pick anything up, or peek in the back room.</div>
       <div class="p counter stag" style="--x:162;--y:58;--w:58;--h:24;--i:8"></div>
       <div class="p stag" style="--x:166;--y:48.6;--w:17;--h:9.6;--i:10">
-        <button class="obj booklet" style="position:absolute;inset:0" data-open="brand" aria-label="Open Brand Immersion"><img src="assets/deck/01.jpg" alt=""></button>
+        <button class="obj booklet" style="position:absolute;inset:0" data-open="brand" aria-label="Open Brand Immersion"><img src="deck-01.jpg" alt=""></button>
         <span class="tag" style="left:calc(var(--u)*29);top:calc(var(--u)*1)"><b>Brand Immersion</b>flip through it</span>
         <button class="plus" data-plus="brand" aria-pressed="false" aria-label="Add Brand Immersion to your list" style="left:calc(var(--u)*-2.5);top:calc(var(--u)*-2.5)">+</button>
       </div>
@@ -483,25 +483,25 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
       </button>
       <span class="plight stag" style="left:calc(var(--u)*40.8);top:calc(var(--u)*5.2);--i:2"></span>
       <div class="p stag" style="--x:36;--y:12;--w:21.6;--h:40;--i:2">
-        <button class="gframe" data-open="arts" style="--fc:linear-gradient(135deg,#f6d57a,#b8862b 30%,#f0c766 55%,#9c6e1f 80%,#e9c060);padding:calc(var(--u)*2.2)" aria-label="Open Arts and Crafts"><span class="mat"><img src="assets/frame/arts.jpg" alt=""></span></button>
+        <button class="gframe" data-open="arts" style="--fc:linear-gradient(135deg,#f6d57a,#b8862b 30%,#f0c766 55%,#9c6e1f 80%,#e9c060);padding:calc(var(--u)*2.2)" aria-label="Open Arts and Crafts"><span class="mat"><img src="frame-arts.jpg" alt=""></span></button>
         <button class="plus" data-plus="arts" aria-pressed="false" aria-label="Add Arts and Crafts to your list" style="right:calc(var(--u)*-2.6);top:calc(var(--u)*-1.6)">+</button>
       </div>
       <div class="p stag" style="--x:36;--y:46;--w:22;--h:5;--i:2"><span class="tag" style="left:0;top:0"><b>Arts and Crafts</b>hand-drawn poster</span></div>
       <span class="plight stag" style="left:calc(var(--u)*72.8);top:calc(var(--u)*9.2);--i:3"></span>
       <div class="p stag" style="--x:68;--y:16;--w:21.6;--h:40;--i:3">
-        <button class="gframe" data-open="netflix" style="--fc:linear-gradient(135deg,#2a2630,#141218);padding:calc(var(--u)*1.2)" aria-label="Open Netflix HQ"><span class="mat"><img src="assets/frame/netflix.jpg" alt=""></span></button>
+        <button class="gframe" data-open="netflix" style="--fc:linear-gradient(135deg,#2a2630,#141218);padding:calc(var(--u)*1.2)" aria-label="Open Netflix HQ"><span class="mat"><img src="frame-netflix.jpg" alt=""></span></button>
         <button class="plus" data-plus="netflix" aria-pressed="false" aria-label="Add Netflix HQ to your list" style="right:calc(var(--u)*-2.6);top:calc(var(--u)*-1.6)">+</button>
       </div>
       <div class="p stag" style="--x:68;--y:46;--w:22;--h:5;--i:3"><span class="tag" style="left:0;top:0"><b>Netflix HQ</b>Bauhaus poster</span></div>
       <span class="plight stag" style="left:calc(var(--u)*104.8);top:calc(var(--u)*3.2);--i:4"></span>
       <div class="p stag" style="--x:100;--y:10;--w:21.6;--h:40;--i:4">
-        <button class="gframe" data-open="kid" style="--fc:linear-gradient(135deg,#c08a55,#8a5530 50%,#b07a48);padding:calc(var(--u)*1.8)" aria-label="Open Kid and Teacher"><span class="mat"><img src="assets/frame/kid.jpg" alt=""></span></button>
+        <button class="gframe" data-open="kid" style="--fc:linear-gradient(135deg,#c08a55,#8a5530 50%,#b07a48);padding:calc(var(--u)*1.8)" aria-label="Open Kid and Teacher"><span class="mat"><img src="frame-kid.jpg" alt=""></span></button>
         <button class="plus" data-plus="kid" aria-pressed="false" aria-label="Add Kid and Teacher to your list" style="right:calc(var(--u)*-2.6);top:calc(var(--u)*-1.6)">+</button>
       </div>
       <div class="p stag" style="--x:100;--y:47;--w:22;--h:5;--i:4"><span class="tag" style="left:0;top:0"><b>Kid and Teacher</b>a classmate's story</span></div>
       <span class="plight stag" style="left:calc(var(--u)*136.8);top:calc(var(--u)*8.2);--i:5"></span>
       <div class="p stag" style="--x:132;--y:15;--w:21.6;--h:40;--i:5">
-        <button class="gframe" data-open="stanley" style="--fc:linear-gradient(135deg,#9bc4a0,#5f8f68);padding:calc(var(--u)*1.6)" aria-label="Open Stanley tennis shoes"><span class="mat"><img src="assets/frame/stanley.jpg" alt=""></span></button>
+        <button class="gframe" data-open="stanley" style="--fc:linear-gradient(135deg,#9bc4a0,#5f8f68);padding:calc(var(--u)*1.6)" aria-label="Open Stanley tennis shoes"><span class="mat"><img src="frame-stanley.jpg" alt=""></span></button>
         <button class="plus" data-plus="stanley" aria-pressed="false" aria-label="Add Stanley tennis shoes to your list" style="right:calc(var(--u)*-2.6);top:calc(var(--u)*-1.6)">+</button>
       </div>
       <div class="p stag" style="--x:132;--y:46;--w:22;--h:5;--i:5"><span class="tag" style="left:0;top:0"><b>Stanley tennis shoes</b>an invented product</span></div>
@@ -604,7 +604,7 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 <div id="backroom" hidden role="dialog" aria-modal="true" aria-label="Back room">
   <div class="cork">
     <h2>Back room</h2>
-    <div class="sketch"><span class="pin"></span><img src="assets/fox-4.jpg" alt="Pencil layout sketch for The quick brown fox, with notes marking black and white boxes"></div>
+    <div class="sketch"><span class="pin"></span><img src="fox-4.jpg" alt="Pencil layout sketch for The quick brown fox, with notes marking black and white boxes"></div>
     <div class="notes">
       <div class="note" style="--r:2deg"><span class="pin" style="background:var(--cobalt)"></span>First pencil layout for <b>The quick brown fox</b>, dated 31/8.</div>
       <div class="note" style="--r:-1.5deg;background:var(--pink)"><span class="pin"></span>The arrows mark which letters go black and which stay as white outlines, and where the white box sits.</div>
@@ -810,7 +810,7 @@ w+=F(`<rect x="1292" y="340" width="172" height="130" fill="#ebe7df" stroke="${I
  a+=`<path d="M1716 130 h14 M1716 144 h14 M1716 158 h14 M1716 172 h14 M1716 186 h14 M1716 200 h14 M1842 130 h14 M1842 144 h14 M1842 158 h14 M1842 172 h14 M1842 186 h14 M1842 200 h14" stroke="#1f6b4f" stroke-width="2"/>`;
  a+=`<rect x="1494" y="322" width="392" height="148" fill="url(#gWood)" stroke="${INK}" stroke-width="3"/>
  <rect x="1504" y="340" width="240" height="116" fill="#3a120c" stroke="${INK}" stroke-width="3"/><rect x="1508" y="344" width="232" height="108" fill="url(#gLit)"/>
- <rect x="1520" y="352" width="58" height="88" fill="#d9a441" stroke="${INK}" stroke-width="2"/><image href="assets/netflix.jpg" x="1525" y="357" width="48" height="78" preserveAspectRatio="xMidYMid slice"/>
+ <rect x="1520" y="352" width="58" height="88" fill="#d9a441" stroke="${INK}" stroke-width="2"/><image href="netflix-small.jpg" x="1525" y="357" width="48" height="78" preserveAspectRatio="xMidYMid slice"/>
  <rect x="1590" y="360" width="52" height="44" fill="#2a2f3d" stroke="${INK}" stroke-width="2"/><rect x="1596" y="366" width="40" height="32" fill="#8fc1a8"/>
  <rect x="1590" y="410" width="52" height="38" fill="#d9a441" stroke="${INK}" stroke-width="2"/><rect x="1596" y="416" width="40" height="26" fill="#f2a7b8"/>
  <rect x="1656" y="354" width="72" height="92" fill="#fffdf6" stroke="${INK}" stroke-width="2"/><rect x="1664" y="362" width="56" height="76" fill="#f6d44a"/><circle cx="1692" cy="396" r="17" fill="#c2452f"/>
@@ -948,15 +948,15 @@ document.querySelectorAll("[data-empty]").forEach(d=>d.addEventListener("click",
 
 /* ---------- the list (chit) ---------- */
 const P={
- k:{shop:"Printing Press",title:"Letter K",kind:"Letterform exploration",made:"2026 · Semester 1",about:"One letter drawn a hundred ways: serifs, scripts, cut-outs, pictorial and experimental forms, grouped by colour into families.",tools:"Adobe Illustrator",process:"Not yet in the back room.",media:[{src:"assets/letter-k.jpg",alt:"A grid of one hundred hand-made letter K designs"}]},
- fox:{shop:"Printing Press",title:"The quick brown fox",kind:"Typographic layout",made:"2026 · Semester 1",about:"A pangram set inside a frame. The centre runs in capitals while the border text travels around all four sides and turns upside down. Finished in three colourways.",tools:"Adobe Illustrator",process:"The first pencil layout is pinned up in the back room.",media:[{src:"assets/fox-1.jpg",name:"Ink black",c:"#141a2b"},{src:"assets/fox-2.jpg",name:"Plum on lime",c:"#4a1530"},{src:"assets/fox-3.jpg",name:"Red on sky",c:"#b31f24"}]},
- zine:{shop:"Stationery",title:"A Shaadi Full of Characters",kind:"Typography zine",made:"2026 · Semester 1",with:"Amira and Eva (group project)",about:"The brief was to teach type terminology through a zine on any topic. We picked the Indian wedding: every guest is a typeface with its own character, and each spread labels a term in the middle of the chaos, from bowl, serif and italic to kerning, ligatures and counters.",tools:"Adobe Illustrator",process:"Sketches coming soon.",media:Array.from({length:8},(_,i)=>({src:`assets/zine/${i+1}.jpg`,alt:`A Shaadi Full of Characters, spread ${i+1}`}))},
- postcards:{shop:"Stationery",title:"Postcards for a classmate",kind:"Postcard series",made:"2026 · Semester 1",about:"The brief was to get to know one classmate and turn their personality into postcards. Ten cards set illustrations around real photos of them, each picking up a different side of who they are: music, food, moods and more.",tools:"Adobe Illustrator",process:"Sketches coming soon.",media:Array.from({length:10},(_,i)=>({src:`assets/postcards/${i+1}.jpg`,alt:`Postcard ${i+1} of 10`}))},
- arts:{shop:"Framing Shop",title:"Arts and Crafts Movement",kind:"Hand-drawn poster · Graphic culture",made:"2026 · Semester 1",about:"The brief was to make a poster as if it came out of the Arts and Crafts movement itself. Drawn by hand, with the period's dense foliage, classical figures and hand-lettered title.",tools:"Hand-drawn",process:"Sketches coming soon.",media:[{src:"assets/frame/arts.jpg",alt:"Hand-drawn black and white Arts and Crafts Movement poster with a classical figure, cherubs and foliage"}]},
- netflix:{shop:"Framing Shop",title:"Netflix HQ",kind:"Bauhaus-inspired poster",made:"2026 · Semester 1",about:"A poster for Netflix's headquarters in Los Gatos, California, built from Bauhaus primary colours and bold architectural forms.",tools:"Adobe Illustrator",process:"Sketches coming soon.",media:[{src:"assets/frame/netflix.jpg",alt:"Bauhaus-style poster of the Netflix headquarters in red, yellow and blue"}]},
- kid:{shop:"Framing Shop",title:"Kid and Teacher",kind:"Illustration",made:"2026 · Semester 1",about:"The brief was to take a story from one of my classmates and turn it into an illustration: a child bent over their homework while their teacher leans over the desk.",tools:"Hand-drawn",process:"Sketches coming soon, and they explain the story behind it.",media:[{src:"assets/frame/kid.jpg",alt:"Hand-drawn illustration of a teacher in a green sari leaning over a child doing homework"}]},
- stanley:{shop:"Framing Shop",title:"Stanley tennis shoes",kind:"Advertisement · invented product",made:"2026 · Semester 1",about:"The brief was to invent a new product for a brand of our choice. I imagined Stanley making tennis shoes, for the it-girl who takes her Stanley cup along to the court.",tools:"Adobe Illustrator",process:"Sketches coming soon.",media:[{src:"assets/frame/stanley.jpg",alt:"Illustrated ad of pink Stanley tennis shoes in a green box beside a Stanley cup and tennis court"}]},
- brand:{shop:"Printing Press",title:"Brand Immersion",kind:"Brand research presentation",made:"2026 · Semester 1",about:"How Nike, ASICS and Comet sell a similar product for completely different reasons. The story runs from Kobe in 1949 to India's new sneaker culture, and ends on where ASICS could go next.",tools:"Figma",process:"Research notes live in the deck's appendix.",media:Array.from({length:23},(_,i)=>({src:`assets/deck/${String(i+1).padStart(2,"0")}.jpg`,alt:`Brand Immersion, slide ${i+1}`}))}
+ k:{shop:"Printing Press",title:"Letter K",kind:"Letterform exploration",made:"2026 · Semester 1",about:"One letter drawn a hundred ways: serifs, scripts, cut-outs, pictorial and experimental forms, grouped by colour into families.",tools:"Adobe Illustrator",process:"Not yet in the back room.",media:[{src:"letter-k.jpg",alt:"A grid of one hundred hand-made letter K designs"}]},
+ fox:{shop:"Printing Press",title:"The quick brown fox",kind:"Typographic layout",made:"2026 · Semester 1",about:"A pangram set inside a frame. The centre runs in capitals while the border text travels around all four sides and turns upside down. Finished in three colourways.",tools:"Adobe Illustrator",process:"The first pencil layout is pinned up in the back room.",media:[{src:"fox-1.jpg",name:"Ink black",c:"#141a2b"},{src:"fox-2.jpg",name:"Plum on lime",c:"#4a1530"},{src:"fox-3.jpg",name:"Red on sky",c:"#b31f24"}]},
+ zine:{shop:"Stationery",title:"A Shaadi Full of Characters",kind:"Typography zine",made:"2026 · Semester 1",with:"Amira and Eva (group project)",about:"The brief was to teach type terminology through a zine on any topic. We picked the Indian wedding: every guest is a typeface with its own character, and each spread labels a term in the middle of the chaos, from bowl, serif and italic to kerning, ligatures and counters.",tools:"Adobe Illustrator",process:"Sketches coming soon.",media:Array.from({length:8},(_,i)=>({src:`zine-${i+1}.jpg`,alt:`A Shaadi Full of Characters, spread ${i+1}`}))},
+ postcards:{shop:"Stationery",title:"Postcards for a classmate",kind:"Postcard series",made:"2026 · Semester 1",about:"The brief was to get to know one classmate and turn their personality into postcards. Ten cards set illustrations around real photos of them, each picking up a different side of who they are: music, food, moods and more.",tools:"Adobe Illustrator",process:"Sketches coming soon.",media:Array.from({length:10},(_,i)=>({src:`postcard-${i+1}.jpg`,alt:`Postcard ${i+1} of 10`}))},
+ arts:{shop:"Framing Shop",title:"Arts and Crafts Movement",kind:"Hand-drawn poster · Graphic culture",made:"2026 · Semester 1",about:"The brief was to make a poster as if it came out of the Arts and Crafts movement itself. Drawn by hand, with the period's dense foliage, classical figures and hand-lettered title.",tools:"Hand-drawn",process:"Sketches coming soon.",media:[{src:"frame-arts.jpg",alt:"Hand-drawn black and white Arts and Crafts Movement poster with a classical figure, cherubs and foliage"}]},
+ netflix:{shop:"Framing Shop",title:"Netflix HQ",kind:"Bauhaus-inspired poster",made:"2026 · Semester 1",about:"A poster for Netflix's headquarters in Los Gatos, California, built from Bauhaus primary colours and bold architectural forms.",tools:"Adobe Illustrator",process:"Sketches coming soon.",media:[{src:"frame-netflix.jpg",alt:"Bauhaus-style poster of the Netflix headquarters in red, yellow and blue"}]},
+ kid:{shop:"Framing Shop",title:"Kid and Teacher",kind:"Illustration",made:"2026 · Semester 1",about:"The brief was to take a story from one of my classmates and turn it into an illustration: a child bent over their homework while their teacher leans over the desk.",tools:"Hand-drawn",process:"Sketches coming soon, and they explain the story behind it.",media:[{src:"frame-kid.jpg",alt:"Hand-drawn illustration of a teacher in a green sari leaning over a child doing homework"}]},
+ stanley:{shop:"Framing Shop",title:"Stanley tennis shoes",kind:"Advertisement · invented product",made:"2026 · Semester 1",about:"The brief was to invent a new product for a brand of our choice. I imagined Stanley making tennis shoes, for the it-girl who takes her Stanley cup along to the court.",tools:"Adobe Illustrator",process:"Sketches coming soon.",media:[{src:"frame-stanley.jpg",alt:"Illustrated ad of pink Stanley tennis shoes in a green box beside a Stanley cup and tennis court"}]},
+ brand:{shop:"Printing Press",title:"Brand Immersion",kind:"Brand research presentation",made:"2026 · Semester 1",about:"How Nike, ASICS and Comet sell a similar product for completely different reasons. The story runs from Kobe in 1949 to India's new sneaker culture, and ends on where ASICS could go next.",tools:"Figma",process:"Research notes live in the deck's appendix.",media:Array.from({length:23},(_,i)=>({src:`deck-${String(i+1).padStart(2,"0")}.jpg`,alt:`Brand Immersion, slide ${i+1}`}))}
 };
 let vId=null,vIdx=0;
 let list=[];try{list=JSON.parse(localStorage.getItem("lane-list")||"[]").filter(k=>P[k]);}catch(e){}
@@ -1028,7 +1028,7 @@ addEventListener("keydown",e=>{
   if(!$("#viewer").hidden&&vId&&P[vId].media.length>1&&(e.key==="ArrowRight"||e.key==="ArrowLeft")){vIdx=Math.min(P[vId].media.length-1,Math.max(0,vIdx+(e.key==="ArrowRight"?1:-1)));drawMedia();}});
 
 const spin=$("#spin-cards");let spinAt=0;
-function drawSpin(){spin.innerHTML=Array.from({length:6},(_,k)=>{const i=(spinAt+k)%10;return`<button style="background-image:url(assets/postcards/${i+1}.jpg)" data-card="${i}" aria-label="Open postcard ${i+1} of 10"></button>`;}).join("");}
+function drawSpin(){spin.innerHTML=Array.from({length:6},(_,k)=>{const i=(spinAt+k)%10;return`<button style="background-image:url(postcard-${i+1}.jpg)" data-card="${i}" aria-label="Open postcard ${i+1} of 10"></button>`;}).join("");}
 drawSpin();
 spin.addEventListener("click",e=>{const b=e.target.closest("[data-card]");if(b)openViewer("postcards",+b.dataset.card);});
 $("#spin").onclick=()=>{if(reduce){spinAt=(spinAt+6)%10;drawSpin();return;}spin.classList.add("turn");setTimeout(()=>{spinAt=(spinAt+6)%10;drawSpin();requestAnimationFrame(()=>requestAnimationFrame(()=>spin.classList.remove("turn")));},350);};
