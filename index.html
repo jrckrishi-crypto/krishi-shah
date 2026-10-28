@@ -3,9 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Krishi Shah, graphic design student at Ecole Intuit Lab. Walk down Krishi's Lane and step into each shop to see the work.">
-<meta property="og:title" content="Krishi's Lane">
-<meta property="og:description" content="A portfolio you walk through: a lane of shops by graphic design student Krishi Shah.">
+<meta name="description" content="Hi, I'm Krishi, a graphic designer and illustrator at Ecole Intuit Lab, open to internships. Walk down my lane and step into each shop to see the work.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jrckrishi-crypto.github.io/krishi-shah/">
+<meta property="og:title" content="Krishi's Lane · Krishi Shah">
+<meta property="og:description" content="Hi, I'm Krishi, a graphic designer and illustrator at Ecole Intuit Lab, open to internships. Walk down my lane and step into each shop to see the work.">
+<meta property="og:image" content="https://jrckrishi-crypto.github.io/krishi-shah/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="An illustrated Mumbai street of shops: Krishi's Lane">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Krishi's Lane · Krishi Shah">
+<meta name="twitter:description" content="Hi, I'm Krishi, a graphic designer and illustrator at Ecole Intuit Lab, open to internships. Walk down my lane and step into each shop to see the work.">
+<meta name="twitter:image" content="https://jrckrishi-crypto.github.io/krishi-shah/preview.jpg">
+<meta name="theme-color" content="#2747a8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%232747a8'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia' font-style='italic' font-size='38' fill='%23f6d44a'%3EK%3C/text%3E%3C/svg%3E">
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <title>Krishi's Lane</title>
@@ -316,10 +327,104 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 .ccard dd{margin:0;word-break:break-word}.ccard dd a{color:var(--cobalt);font-weight:600}
 .ccard .todo{color:#7a5a08;background:#fff3c2;padding:1px 6px;border-radius:5px;font-size:12.5px;user-select:none}
 .rc-actions{display:flex;gap:10px;flex-wrap:wrap}
+body.rc-open #chit{display:none}
+.send{display:grid;gap:8px;padding:12px;border-radius:12px;background:#fdf0f3;border:1.5px dashed #d98aa0}
+.send-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a0566b}
+.send-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.sendbtn{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 8px;border-radius:999px;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font-size:13px;font-weight:700;text-decoration:none;color:#fff;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.sendbtn svg{width:18px;height:18px;flex:none}
+.sendbtn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.sendbtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.sendbtn.wa{background:#1f9d57}.sendbtn.mail{background:var(--cobalt)}.sendbtn.ig{background:linear-gradient(135deg,#f6a13b,#e1306c 50%,#8a3ab9)}
+.send-hint{font-size:11.5px;line-height:1.45;color:#6b4a55}
+@media (max-width:420px){.send-row{grid-template-columns:1fr}}
+
+/* ===== opening shutter ===== */
+#welcome{position:fixed;inset:0;z-index:90;color:#fff;cursor:pointer;overflow:hidden;
+  background:repeating-linear-gradient(180deg,#2d50b2 0 30px,#3a5fc2 30px 32px,#1d3a8e 32px 35px,#2747a8 35px 38px);
+  transition:transform .95s cubic-bezier(.7,0,.25,1);display:grid;grid-template-rows:auto 1fr auto}
+#welcome.up{transform:translateY(-102%)}
+#welcome[hidden]{display:none!important}
+.w-housing{height:calc(34px + env(safe-area-inset-top,0px));background:linear-gradient(#5a6478,#3b4356);border-bottom:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,.18)}
+.w-body{display:flex;align-items:center;justify-content:center;gap:clamp(20px,5vw,64px);padding-block:24px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));flex-wrap:wrap}
+.w-keeper{width:clamp(130px,20vw,230px);height:auto;flex:none;filter:drop-shadow(0 10px 0 rgba(10,20,60,.25))}
+.w-text{max-width:600px;min-width:0}
+.w-eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#cfe0ff;margin:0 0 12px}
+.w-text h1{text-wrap:balance;font-family:"Bodoni Moda",var(--f-display);font-style:italic;font-weight:600;font-size:clamp(52px,9vw,112px);line-height:.95;margin:0;color:var(--yellow);letter-spacing:-.02em;text-shadow:0 4px 0 rgba(10,20,60,.35)}
+.w-text p.w-lead{font-size:clamp(17px,2vw,22px);line-height:1.5;margin:18px 0 0;font-weight:500;text-wrap:pretty}
+.w-pill{display:inline-block;background:var(--yellow);color:var(--ink);border-radius:999px;padding:1px 12px;font-weight:700;white-space:nowrap}
+.w-sub{font-size:15px;line-height:1.55;margin:12px 0 0;color:#dbe6ff;max-width:480px}
+.w-foot{display:grid;justify-items:center;gap:14px;padding-bottom:calc(22px + env(safe-area-inset-bottom,0px))}
+.w-open{border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:999px;padding:12px 22px;font-size:14px;font-weight:700;box-shadow:4px 4px 0 var(--ink);display:inline-flex;gap:10px;align-items:center;animation:nudge 1.8s ease-in-out infinite}
+.w-open:hover{animation-play-state:paused}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.w-handle{width:min(180px,40vw);height:16px;border-radius:8px;background:linear-gradient(#e0e5ee,#8b96aa);border:2px solid var(--ink)}
+@media (max-width:640px){.w-body{flex-direction:column;text-align:center;gap:14px}.w-sub{margin-inline:auto}}
+
+/* ===== see everything ===== */
+#all-btn{position:fixed;z-index:45;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);background:var(--paper);border-radius:999px;padding:9px 15px;font-size:12.5px;font-weight:700;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+#all-btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+#all-btn svg{width:16px;height:16px}
+@media (max-width:760px){#all-btn{bottom:calc(72px + env(safe-area-inset-bottom,0px))}body.in-shop #all-btn{bottom:calc(14px + env(safe-area-inset-bottom,0px))}}
+body.rc-open #all-btn{display:none}
+body.grid-open #chit{display:none}
+#grid{position:fixed;inset:0;z-index:58;background:rgba(20,16,40,.72);display:grid;place-items:center;padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+#grid[hidden]{display:none!important}
+.g-panel{width:min(1100px,100%);max-height:100%;overflow:auto;background:var(--paper);border:3px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);padding:clamp(18px,3vw,32px);animation:rise .35s cubic-bezier(.2,.8,.2,1)}
+.g-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.g-head h2{font-family:"Bodoni Moda",var(--f-display);font-style:italic;font-weight:600;font-size:clamp(28px,4vw,40px);margin:0;line-height:1.05}
+.g-head p{margin:6px 0 0;font-size:14px;color:#4b4660}
+.g-shop{margin-top:22px}
+.g-shop h3{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.g-shop h3 i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);background:var(--c)}
+.g-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+@media (max-width:520px){.g-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.g-card b{font-size:16px}}
+.g-card{position:relative;display:grid;gap:8px;min-width:0}
+.g-thumb{display:block;width:100%;aspect-ratio:4/3;border:2px solid var(--ink);border-radius:12px;overflow:hidden;padding:0;background:#efe9dc;transition:transform .2s,box-shadow .2s}
+.g-thumb img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.g-thumb:hover,.g-thumb:focus-visible{transform:translateY(-3px);box-shadow:4px 4px 0 var(--ink)}
+.g-card b{font-family:var(--f-display);font-weight:400;font-size:18px;line-height:1.15;display:block}
+.g-card small{font-size:12.5px;color:#4b4660;display:block;margin-top:2px}
+.g-card .plus{top:8px;right:8px}
+
+/* ===== CV on the wall ===== */
+.cvboard{display:grid;justify-items:center;align-content:start;gap:calc(var(--u)*.6);padding:0}
+.cvboard .clip{width:100%;flex:1;aspect-ratio:3/4;background:#9c6236;border:2px solid var(--ink);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1.1);position:relative}
+.cvboard .clip::before{content:"";position:absolute;left:30%;right:30%;top:calc(var(--u)*-.7);height:calc(var(--u)*1.8);background:linear-gradient(#e0e5ee,#8b96aa);border:1.5px solid var(--ink);border-radius:calc(var(--u)*.4)}
+.cvboard .sheetcv{display:block;height:100%;background:#fffdf6;border:1px solid var(--ink);border-radius:2px;padding:calc(var(--u)*1.4) calc(var(--u)*1);text-align:left}
+.cvboard .sheetcv em{display:block;font-family:"Bodoni Moda",var(--f-display);font-style:italic;font-weight:600;font-size:max(12px,calc(var(--u)*1.7));line-height:1}
+.cvboard .sheetcv span{display:block;height:calc(var(--u)*.45);background:#d8dce6;border-radius:2px;margin-top:calc(var(--u)*.8)}
+.cvboard .sheetcv span:nth-child(3){width:70%}.cvboard .sheetcv span:nth-child(5){width:55%}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0ms!important}}
 </style>
 </head>
 <body>
+
+<section id="welcome" aria-labelledby="w-title">
+  <div class="w-housing"></div>
+  <div class="w-body">
+    <svg class="w-keeper" id="w-keeper" viewBox="0 0 200 240" aria-hidden="true"></svg>
+    <div class="w-text">
+      <p class="w-eyebrow">Welcome</p>
+      <h1 id="w-title">Hi, I'm Krishi.</h1>
+      <p class="w-lead">I'm a graphic designer and illustrator studying at Ecole Intuit Lab, and I'm <span class="w-pill">open to internships</span>.</p>
+      <p class="w-sub">Everything I make lives in the little shops down my lane. Come in and have a look around.</p>
+    </div>
+  </div>
+  <div class="w-foot">
+    <button class="w-open" id="w-open">Tap anywhere to open the shutter <span aria-hidden="true">↑</span></button>
+    <span class="w-handle" aria-hidden="true"></span>
+  </div>
+</section>
+
+<button id="all-btn" aria-haspopup="dialog"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9" y="1" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="1" y="9" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>See everything</button>
+
+<div id="grid" hidden role="dialog" aria-modal="true" aria-labelledby="g-title">
+  <div class="g-panel">
+    <div class="g-head"><div><h2 id="g-title">Everything on the lane</h2><p>Every project in one place. Tap one to look closer, or tap + to add it to your list.</p></div><button class="btn dark" id="g-close">Close ✕</button></div>
+    <div id="g-body"></div>
+  </div>
+</div>
 
 <div id="spacer"></div>
 
@@ -549,6 +654,10 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
       <div class="handsign stag" style="left:calc(var(--u)*76);top:calc(var(--u)*63);--i:4" aria-hidden="true">Odds &amp; ends<br>restocking soon</div>
       <svg class="p stag keeper" data-look="gift" style="--x:126;--y:31;--w:24;--h:28.8;--i:5" viewBox="0 0 200 240" aria-hidden="true"></svg>
       <div class="p about stag" style="--x:154;--y:10;--w:44;--h:20;--i:6"><strong>Hi, I'm Krishi!</strong>What's your name? I run every shop on this lane, and yes, I work overtime. Design is my passion, and honestly, I can't pick a favourite out of everything here. I love experimenting: new art styles, new fonts, new colour palettes, new everything.</div>
+      <div class="p stag" style="--x:172;--y:33;--w:13;--h:22;--i:7">
+        <button class="obj cvboard" id="cv-btn" style="position:absolute;inset:0" aria-label="Download Krishi's CV"><span class="clip"><span class="sheetcv"><em>Krishi Shah</em><span></span><span></span><span></span><span></span></span></span></button>
+        <span class="tag" style="left:calc(var(--u)*-15);top:calc(var(--u)*8)"><b>My CV</b>tap to download</span>
+      </div>
       <div class="p counter stag" style="--x:112;--y:58;--w:56;--h:24;--i:5"></div>
       <div class="p stag" style="--x:114;--y:47.6;--w:13;--h:10.6;--i:7">
         <button class="obj till" id="till" style="position:absolute;inset:0" aria-label="Print your receipt">
@@ -597,7 +706,15 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
       <div><label for="rc-note">Your note</label>
       <textarea id="rc-note" placeholder="Hi Krishi, I liked..."></textarea></div>
       <dl id="rc-contact"></dl>
-      <div class="rc-actions"><button class="btn" id="rc-copy">Copy my note</button><button class="btn" id="rc-email">Copy email</button><button class="btn dark" id="rc-close">Back to the shop</button></div>
+      <div class="send"><span class="send-label">Send your note to Krishi</span>
+        <div class="send-row">
+          <a class="sendbtn wa" id="send-wa" href="https://wa.me/919819684116" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.3 0 .6.3.5.9 1.3 1.6 1.9.9.8 1.6 1 1.9 1.1.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.4.4 0 .5-.2 1.3-.9 1.7-.6.4-1.5.6-2.9.1-1.5-.5-3-1.5-4.2-2.8-1.1-1.2-1.8-2.5-2-3.4-.2-1 .1-1.8.1-1.8Z" fill="currentColor"/></svg>WhatsApp</a>
+          <a class="sendbtn mail" id="send-mail" href="mailto:jrckrishi@gmail.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Email</a>
+          <a class="sendbtn ig" id="send-ig" href="https://ig.me/m/kreatewithkrishi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>Instagram</a>
+        </div>
+        <span class="send-hint" id="send-hint">Your note is filled in for you on WhatsApp and email. For Instagram, we copy it so you can paste it in the chat.</span>
+      </div>
+      <div class="rc-actions"><button class="btn" id="rc-copy">Copy my note</button><button class="btn dark" id="rc-close">Back to the shop</button></div>
     </div>
   </div>
 </div>
@@ -672,7 +789,7 @@ const MINI_ST=MINI.replaceAll("#b8322a","#2f8f6b").replaceAll("#8e2219","#1f6b4f
 function cloud(x,y,k){const puffs=[[-58,10,24],[-34,-4,32],[-6,-20,40],[30,-30,46],[66,-16,40],[96,0,30],[118,12,22],[-20,16,30],[22,14,36],[62,16,34],[94,18,26]];
   return`<g filter="url(#soft)">`+puffs.map(([a,b,r])=>`<circle cx="${x+a*k}" cy="${y+b*k}" r="${r*k}" fill="url(#cloudG)"/>`).join("")+`</g>`;}
 $("#skyart").innerHTML=`<defs><linearGradient id="cloudG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".65" stop-color="#f5f9ff"/><stop offset="1" stop-color="#dce9fb"/></linearGradient><filter id="soft" x="-20%" y="-30%" width="140%" height="160%"><feGaussianBlur stdDeviation="1.4"/></filter><radialGradient id="moonG"><stop offset=".6" stop-color="#fff6d6" stop-opacity=".55"/><stop offset="1" stop-color="#fff6d6" stop-opacity="0"/></radialGradient></defs>
-<circle cx="1180" cy="120" r="80" fill="url(#moonG)"/><circle cx="1180" cy="120" r="42" fill="#fff6d8"/><circle cx="1166" cy="108" r="8" fill="#f1e4b4"/><circle cx="1194" cy="132" r="5.5" fill="#f1e4b4"/>`+cloud(560,200,.9)+cloud(250,90,.6)+cloud(1420,210,.8)+cloud(900,250,.5);
+<circle cx="1180" cy="120" r="80" fill="url(#moonG)"/><circle cx="1180" cy="120" r="42" fill="#fff6d8"/><circle cx="1166" cy="108" r="8" fill="#f1e4b4"/><circle cx="1194" cy="132" r="5.5" fill="#f1e4b4"/>`+cloud(560,200,.9)+cloud(780,130,.6)+cloud(1420,210,.8)+cloud(900,250,.5);
 
 /* back layer kept empty: the gradient sky reads cleaner without far buildings */
 /* ---------- drawing kit for the lane ---------- */
@@ -985,7 +1102,7 @@ function enter(id){if(document.body.classList.contains("in-shop"))return;lastFoc
     setTimeout(()=>$("#leave").focus({preventScroll:true}),400);};
   if(reduce){show();return;}
   stage.classList.add("zoom");stage.style.transform="scale(3.2)";setTimeout(show,520);}
-function leave(){if(room.hidden)return;closeViewer();closeBack();closeReceipt();room.classList.remove("opened");
+function leave(){if(room.hidden)return;closeViewer();closeBack();closeReceipt();closeGrid();room.classList.remove("opened");
   const done=()=>{room.hidden=true;document.body.classList.remove("in-shop");document.documentElement.style.overflow="";
     if(!reduce){stage.style.transform="scale(3.2)";void stage.offsetWidth;stage.classList.add("zoom");stage.style.transform="";setTimeout(()=>stage.classList.remove("zoom"),600);}
     (lastFocus&&lastFocus.focus?lastFocus:$("#door-"+cur)).focus({preventScroll:true});};
@@ -1015,7 +1132,7 @@ $("#v-extra").addEventListener("click",e=>{const s=e.target.closest("[data-i]"),
 $("#v-media").addEventListener("click",()=>{const n=P[vId].media.length;if(n<2||vId==="fox")$("#v-media").classList.toggle("zoomed");else if(vIdx<n-1){vIdx++;drawMedia();}});
 $("#v-turn").onclick=()=>{const f=$("#v-flip").classList.toggle("flipped");$("#v-back").setAttribute("aria-hidden",!f);$("#v-turn").textContent=f?"Turn back ↺":"Turn over ↻";};
 $("#v-plus").onclick=()=>toggle(vId);
-function closeViewer(){if($("#viewer").hidden)return;$("#viewer").hidden=true;const t=document.querySelector(`[data-open="${vId}"]`);vId=null;t&&t.focus({preventScroll:true});}
+function closeViewer(){if($("#viewer").hidden)return;$("#viewer").hidden=true;const t=!$("#grid").hidden?document.querySelector(`[data-gopen="${vId}"]`):document.querySelector(`[data-open="${vId}"]`);vId=null;t&&t.focus({preventScroll:true});}
 $("#v-close").onclick=closeViewer;$("#viewer").addEventListener("click",e=>{if(e.target.id==="viewer")closeViewer();});
 document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>openViewer(b.dataset.open,+(b.dataset.variant||0))));
 
@@ -1024,7 +1141,7 @@ function closeBack(){if($("#backroom").hidden)return;$("#backroom").hidden=true;
 $("#backroom-door").onclick=openBack;$("#backroom-close").onclick=closeBack;$("#backroom").addEventListener("click",e=>{if(e.target.id==="backroom")closeBack();});
 
 addEventListener("keydown",e=>{
-  if(e.key==="Escape"){if(!$("#viewer").hidden)closeViewer();else if(!$("#backroom").hidden)closeBack();else if(!room.hidden)leave();}
+  if(e.key==="Escape"){if(!$("#viewer").hidden)closeViewer();else if(!$("#grid").hidden)closeGrid();else if(!$("#backroom").hidden)closeBack();else if(!room.hidden)leave();}
   if(!$("#viewer").hidden&&vId&&P[vId].media.length>1&&(e.key==="ArrowRight"||e.key==="ArrowLeft")){vIdx=Math.min(P[vId].media.length-1,Math.max(0,vIdx+(e.key==="ArrowRight"?1:-1)));drawMedia();}});
 
 const spin=$("#spin-cards");let spinAt=0;
@@ -1039,14 +1156,44 @@ function openReceipt(){const d=new Date();
   $("#rc-total").textContent=list.length;
   $("#rc-contact").innerHTML=CONTACT.map(([k,v])=>`<dt>${k}</dt><dd>${v||'<span class="todo">to be added</span>'}</dd>`).join("");
   if(!$("#rc-note").value&&list.length)$("#rc-note").value=`Hi Krishi, I walked down your lane and liked ${list.map(id=>P[id].title).join(", ")}.`;
-  $("#receipt").hidden=false;$("#rc-close").focus();}
-function closeReceipt(){if($("#receipt").hidden)return;$("#receipt").hidden=true;$("#till").focus({preventScroll:true});}
+  $("#receipt").hidden=false;document.body.classList.add("rc-open");$("#rc-close").focus();}
+function closeReceipt(){if($("#receipt").hidden)return;$("#receipt").hidden=true;document.body.classList.remove("rc-open");$("#till").focus({preventScroll:true});}
 $("#till").onclick=openReceipt;$("#rc-close").onclick=closeReceipt;$("#receipt").addEventListener("click",e=>{if(e.target.id==="receipt")closeReceipt();});
 $("#rc-copy").onclick=()=>{const t=$("#rc-note");const done=()=>toast("Note copied. Send it to jrckrishi@gmail.com");
   try{navigator.clipboard.writeText(t.value).then(done,()=>{t.select();toast("Select and copy your note.");});}catch(e){t.select();toast("Select and copy your note.");}};
-$("#rc-email").onclick=()=>{const e="jrckrishi@gmail.com";try{navigator.clipboard.writeText(e).then(()=>toast("Email copied: "+e),()=>toast("Krishi's email: "+e));}catch(x){toast("Krishi's email: "+e);}};
+const noteText=()=>{const v=$("#rc-note").value.trim();return v||"Hi Krishi! I just walked down your lane.";};
+$("#send-wa").addEventListener("click",()=>{$("#send-wa").href="https://wa.me/919819684116?text="+encodeURIComponent(noteText());});
+$("#send-mail").addEventListener("click",()=>{$("#send-mail").href="mailto:jrckrishi@gmail.com?subject="+encodeURIComponent("Hello from Krishi's Lane")+"&body="+encodeURIComponent(noteText());});
+$("#send-ig").addEventListener("click",()=>{const t=noteText();try{navigator.clipboard.writeText(t).then(()=>toast("Note copied. Paste it into the Instagram chat."),()=>toast("Copy your note, then paste it in the chat."));}catch(x){toast("Copy your note, then paste it in the chat.");}});
 document.querySelectorAll("[data-stickers]").forEach(b=>b.addEventListener("click",()=>toast("The stickers are still being printed. Soon you'll decorate your card with them.")));
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#receipt").hidden){e.stopImmediatePropagation();closeReceipt();}},true);
+/* ---------- opening shutter ---------- */
+$("#w-keeper").innerHTML=LOOK.gift;
+const welcome=$("#welcome");document.documentElement.style.overflow="hidden";
+function openShutter(){if(welcome.classList.contains("up"))return;welcome.classList.add("up");
+  const done=()=>{welcome.hidden=true;if(!document.body.classList.contains("in-shop"))document.documentElement.style.overflow="";};
+  reduce?done():setTimeout(done,950);}
+welcome.addEventListener("click",openShutter);
+welcome.addEventListener("wheel",e=>{if(e.deltaY>0)openShutter();},{passive:true});
+let wy=null;welcome.addEventListener("touchstart",e=>{wy=e.touches[0].clientY;},{passive:true});
+welcome.addEventListener("touchmove",e=>{if(wy!==null&&wy-e.touches[0].clientY>30)openShutter();},{passive:true});
+addEventListener("keydown",e=>{if(!welcome.hidden&&!welcome.classList.contains("up")&&["Enter"," ","ArrowDown","ArrowUp","PageDown"].includes(e.key)){e.preventDefault();e.stopImmediatePropagation();openShutter();}},true);
+$("#w-open").focus({preventScroll:true});
+
+/* ---------- see everything ---------- */
+const GSHOPS=[["Printing Press","#2747a8"],["Framing Shop","#c2452f"],["Stationery","#2f8f6b"]];
+function drawGrid(){$("#g-body").innerHTML=GSHOPS.map(([name,c])=>{const ids=Object.keys(P).filter(k=>P[k].shop===name);
+  return`<section class="g-shop"><h3><i style="--c:${c}"></i>${name}</h3><div class="g-cards">${ids.map(id=>`<div class="g-card"><button class="g-thumb" data-gopen="${id}" aria-label="Open ${P[id].title}"><img src="${P[id].media[0].src}" alt="" loading="lazy"></button><button class="plus" data-plus="${id}" aria-pressed="false" aria-label="Add ${P[id].title} to your list">+</button><div><b>${P[id].title}</b><small>${P[id].kind}</small></div></div>`).join("")}</div></section>`;}).join("");drawList();}
+function openGrid(){drawGrid();$("#grid").hidden=false;document.body.classList.add("grid-open");$("#g-close").focus();}
+function closeGrid(){if($("#grid").hidden)return;$("#grid").hidden=true;document.body.classList.remove("grid-open");$("#all-btn").focus({preventScroll:true});}
+$("#all-btn").onclick=openGrid;$("#g-close").onclick=closeGrid;
+$("#grid").addEventListener("click",e=>{if(e.target.id==="grid"){closeGrid();return;}
+  const o=e.target.closest("[data-gopen]");if(o){openViewer(o.dataset.gopen,0);return;}
+  const pl=e.target.closest("[data-plus]");if(pl)toggle(pl.dataset.plus);});
+
+/* ---------- CV ---------- */
+const CV_URL=null;
+$("#cv-btn").onclick=()=>{if(!CV_URL){toast("Krishi's CV is being updated. Check back soon!");return;}const a=document.createElement("a");a.href=CV_URL;a.download="Krishi-Shah-CV.pdf";a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove();};
 drawList();layout();
 if(document.fonts)document.fonts.ready.then(render);
 })();
