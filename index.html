@@ -22,7 +22,7 @@
 <title>Krishi's Lane</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,500;1,6..96,600&family=DM+Serif+Display&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800&family=PT+Mono&family=DM+Serif+Display&family=Montserrat:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yatra+One&text=%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A4%BF%20%E0%A4%B2%E0%A5%87%E0%A4%A8&display=swap">
 <style>
 /* Layout: a fixed stage holds three parallax layers (back buildings, the lane of shops, foreground plants); page scroll walks the lane sideways. */
@@ -33,8 +33,8 @@
   --f-display:"DM Serif Display", Georgia, serif;
   --f-body:"Montserrat", "Avenir Next", "Segoe UI", sans-serif;
   --wh:600px; --u:8px;
-  --plaster:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.006 .05' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 .12  0 0 0 0 .14  0 0 0 0 .32  0 0 0 .32 -.1'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='120'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.004 .3' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 .25  0 0 0 0 .12  0 0 0 0 .04  0 0 0 .7 -.25'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+  --plaster:linear-gradient(transparent,transparent);
+  --grain:linear-gradient(transparent,transparent);
   color-scheme:light;
 }
 html,body{background:var(--sky2);color:var(--ink)}
@@ -106,19 +106,19 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 #room-track{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:var(--cobalt) transparent}
 .room-inner{position:relative;height:100%;width:calc(var(--u)*var(--rw))}
 .p{position:absolute;left:calc(var(--u)*var(--x));top:calc(var(--u)*var(--y));width:calc(var(--u)*var(--w));height:calc(var(--u)*var(--h))}
-.wallpaper{position:absolute;left:0;right:0;top:0;height:calc(var(--u)*62);background:var(--plaster),linear-gradient(#cfdaf0,#e6edf9 60%,#d9e3f4);background-size:calc(var(--u)*50) calc(var(--u)*50),auto}
-.ceiling{left:0;right:0;top:0;height:calc(var(--u)*5);background:linear-gradient(#2a2238,#1b1626);position:absolute;border-bottom:calc(var(--u)*.6) solid #3b3150}
-.wainscot{position:absolute;left:0;right:0;top:calc(var(--u)*62);height:calc(var(--u)*20);background:var(--plaster),linear-gradient(#2f52b4,#1f3c93);background-size:calc(var(--u)*50) calc(var(--u)*50),auto;border-top:calc(var(--u)*.9) solid var(--yellow);box-shadow:inset 0 calc(var(--u)*.9) 0 rgba(0,0,0,.18)}
+.wallpaper{position:absolute;left:0;right:0;top:0;height:calc(var(--u)*62);background:var(--plaster),linear-gradient(#dae3f4,#dae3f4);background-size:calc(var(--u)*50) calc(var(--u)*50),auto}
+.ceiling{left:0;right:0;top:0;height:calc(var(--u)*5);background:linear-gradient(#221c2f,#221c2f);position:absolute;border-bottom:calc(var(--u)*.6) solid #3b3150}
+.wainscot{position:absolute;left:0;right:0;top:calc(var(--u)*62);height:calc(var(--u)*20);background:var(--plaster),linear-gradient(#2747a4,#2747a4);background-size:calc(var(--u)*50) calc(var(--u)*50),auto;border-top:calc(var(--u)*.9) solid var(--yellow);box-shadow:inset 0 calc(var(--u)*.9) 0 rgba(0,0,0,.18)}
 .wainscot::before{content:"";position:absolute;inset:calc(var(--u)*2.8) 0 calc(var(--u)*2.2);background:repeating-linear-gradient(90deg,transparent 0 calc(var(--u)*2),rgba(255,255,255,.22) calc(var(--u)*2) calc(var(--u)*2.25),transparent calc(var(--u)*2.25) calc(var(--u)*22.75),rgba(0,0,0,.22) calc(var(--u)*22.75) calc(var(--u)*23),transparent calc(var(--u)*23) calc(var(--u)*24))}
-.floor{position:absolute;left:0;right:0;top:calc(var(--u)*82);bottom:0;background:var(--grain),repeating-linear-gradient(90deg,#c08a55 0 calc(var(--u)*13),#9f6c3f calc(var(--u)*13) calc(var(--u)*13.35)),linear-gradient(#b17a47,#c99460);background-size:calc(var(--u)*40) calc(var(--u)*16),auto,auto;border-top:calc(var(--u)*.6) solid var(--ink)}
-.floor::before{content:"";position:absolute;left:0;right:0;top:0;height:calc(var(--u)*3);background:linear-gradient(rgba(27,22,38,.35),transparent)}
+.floor{position:absolute;left:0;right:0;top:calc(var(--u)*82);bottom:0;background:var(--grain),repeating-linear-gradient(90deg,#c08a55 0 calc(var(--u)*13),#9f6c3f calc(var(--u)*13) calc(var(--u)*13.35)),linear-gradient(#bd8754,#bd8754);background-size:calc(var(--u)*40) calc(var(--u)*16),auto,auto;border-top:calc(var(--u)*.6) solid var(--ink)}
+.floor::before{content:"";position:absolute;left:0;right:0;top:0;height:calc(var(--u)*1.2);background:rgba(27,22,38,.18)}
 .lamp{position:absolute;top:calc(var(--u)*5);width:calc(var(--u)*12);margin-left:calc(var(--u)*-6);pointer-events:none}
 .lamp .cord{display:block;width:2px;height:calc(var(--u)*6);background:var(--ink);margin:0 auto}
-.lamp .shade{display:block;position:relative;height:calc(var(--u)*4.2);background:linear-gradient(90deg,#1f3c93,#2f56c2 45%,#1a3380);border:2px solid var(--ink);border-radius:calc(var(--u)*6) calc(var(--u)*6) calc(var(--u)*.6) calc(var(--u)*.6);z-index:2}
+.lamp .shade{display:block;position:relative;height:calc(var(--u)*4.2);background:linear-gradient(#23429c,#23429c);border:2px solid var(--ink);border-radius:calc(var(--u)*6) calc(var(--u)*6) calc(var(--u)*.6) calc(var(--u)*.6);z-index:2}
 .lamp .shade::before{content:"";position:absolute;left:44%;top:calc(var(--u)*-1.2);width:12%;height:calc(var(--u)*1.4);background:#d9a441;border:2px solid var(--ink);border-bottom:0}
 .lamp .shade::after{content:"";position:absolute;left:30%;right:30%;bottom:calc(var(--u)*-1.6);height:calc(var(--u)*1.8);border-radius:0 0 50% 50%;background:#fff6c4;border:2px solid var(--ink);border-top:0}
-.lamp .cone{position:absolute;left:-60%;right:-60%;top:calc(var(--u)*9.5);height:calc(var(--u)*30);background:linear-gradient(rgba(255,228,140,.55),rgba(255,228,140,0));clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);z-index:1}
-.lamp .glow{position:absolute;left:50%;top:calc(var(--u)*10);width:calc(var(--u)*14);height:calc(var(--u)*14);margin:calc(var(--u)*-7) 0 0 calc(var(--u)*-7);border-radius:50%;background:radial-gradient(rgba(255,236,150,.9),rgba(255,236,150,0) 70%)}
+.lamp .cone{position:absolute;left:-60%;right:-60%;top:calc(var(--u)*9.5);height:calc(var(--u)*30);background:rgba(255,226,130,.26);clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);z-index:1}
+.lamp .glow{display:none}
 
 .stag{opacity:1;transform:none;transition:opacity .5s ease,transform .55s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms + 260ms)}
 #room.closed .stag{opacity:0;transform:translateY(calc(var(--u)*3))}
@@ -147,10 +147,10 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 
 .typecase .tray{position:absolute;left:calc(var(--u)*-1.5);right:calc(var(--u)*-1.5);top:0;height:calc(var(--u)*10);border:2px solid var(--ink);background:url(letter-k.jpg) center 30%/150% auto #fff;overflow:hidden;padding:0;display:block}
 .typecase .tray::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(var(--u)*5),var(--wood) calc(var(--u)*5) calc(var(--u)*5.6)),repeating-linear-gradient(0deg,transparent 0 calc(var(--u)*3.2),var(--wood) calc(var(--u)*3.2) calc(var(--u)*3.8));border:calc(var(--u)*.6) solid var(--wood)}
-.typecase .cab{position:absolute;inset:calc(var(--u)*10) 0 0 0;background:var(--grain),linear-gradient(90deg,#8a5530,#a86c3d 40%,#8a5530);background-size:calc(var(--u)*30) calc(var(--u)*12),auto;border:2px solid var(--ink);display:grid;grid-template-rows:repeat(4,1fr);gap:calc(var(--u)*.8);padding:calc(var(--u)*1)}
-.drawer{position:relative;border:1.5px solid var(--ink);background:var(--grain),linear-gradient(#a8703f,#87522c);background-size:calc(var(--u)*26) calc(var(--u)*10),auto;display:grid;place-items:center;padding:0;transition:transform .2s,box-shadow .2s;box-shadow:inset 0 calc(var(--u)*-.4) 0 rgba(0,0,0,.25)}
+.typecase .cab{position:absolute;inset:calc(var(--u)*10) 0 0 0;background:var(--grain),linear-gradient(#945d34,#945d34);background-size:calc(var(--u)*30) calc(var(--u)*12),auto;border:2px solid var(--ink);display:grid;grid-template-rows:repeat(4,1fr);gap:calc(var(--u)*.8);padding:calc(var(--u)*1)}
+.drawer{position:relative;border:1.5px solid var(--ink);background:var(--grain),linear-gradient(#986136,#986136);background-size:calc(var(--u)*26) calc(var(--u)*10),auto;display:grid;place-items:center;padding:0;transition:transform .2s,box-shadow .2s;box-shadow:inset 0 calc(var(--u)*-.4) 0 rgba(0,0,0,.25)}
 .drawer:hover,.drawer:focus-visible{transform:translateY(calc(var(--u)*.35)) scale(1.03);box-shadow:0 calc(var(--u)*.6) 0 var(--wood-d),inset 0 calc(var(--u)*-.4) 0 rgba(0,0,0,.25)}
-.brass{background:linear-gradient(#f0c766,#c9912f);border:1.5px solid var(--ink);font-family:var(--f-display);font-size:max(12px,calc(var(--u)*1.5));line-height:1.25;padding:0 calc(var(--u)*1);border-radius:calc(max(5px,var(--u)*.6));box-shadow:0 1px 0 rgba(255,255,255,.4) inset}
+.brass{background:linear-gradient(#dcac4a,#dcac4a);border:1.5px solid var(--ink);font-family:var(--f-display);font-size:max(12px,calc(var(--u)*1.5));line-height:1.25;padding:0 calc(var(--u)*1);border-radius:calc(max(5px,var(--u)*.6));box-shadow:0 1px 0 rgba(255,255,255,.4) inset}
 .drawer.empty .brass{font-family:var(--f-body);font-size:max(10px,calc(var(--u)*1.05));font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
 
 .print{position:absolute;left:calc(var(--u)*var(--x));top:calc(var(--u)*var(--y));width:calc(var(--u)*21);transform:rotate(var(--r));transform-origin:50% 0}
@@ -160,12 +160,12 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 .print:hover{transform:rotate(var(--r)) translateY(calc(var(--u)*-.5))}
 #rope{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
 
-.table .top{position:absolute;left:0;right:0;top:calc(var(--u)*8);height:calc(var(--u)*2.2);background:linear-gradient(#b27744,#8a5530);border:2px solid var(--ink)}
+.table .top{position:absolute;left:0;right:0;top:calc(var(--u)*8);height:calc(var(--u)*2.2);background:linear-gradient(#9e663a,#9e663a);border:2px solid var(--ink)}
 .table .leg{position:absolute;top:calc(var(--u)*10);bottom:0;width:calc(var(--u)*1.6);background:var(--wood-d);border:2px solid var(--ink)}
 .table .tin{position:absolute;bottom:calc(var(--u)*14);width:calc(var(--u)*4);height:calc(var(--u)*3);border:2px solid var(--ink);border-radius:calc(var(--u)*.4);box-shadow:inset calc(var(--u)*-.8) 0 0 rgba(0,0,0,.2)}
 .table .stack{position:absolute;bottom:calc(var(--u)*14);height:calc(var(--u)*2.5);width:calc(var(--u)*12);background:repeating-linear-gradient(0deg,#fff 0 calc(var(--u)*.4),#d8dce6 calc(var(--u)*.4) calc(var(--u)*.55));border:2px solid var(--ink)}
 
-.counter{border-radius:calc(var(--u)*1) calc(var(--u)*1) 0 0;background:var(--plaster),linear-gradient(#2f52b4,#1f3c93);background-size:calc(var(--u)*40) calc(var(--u)*40),auto;border:2px solid var(--ink);border-top:calc(var(--u)*1.4) solid var(--yellow);box-shadow:inset 0 0 0 calc(var(--u)*1.4) var(--cobalt-d)}
+.counter{border-radius:calc(var(--u)*1) calc(var(--u)*1) 0 0;background:var(--plaster),linear-gradient(#2747a4,#2747a4);background-size:calc(var(--u)*40) calc(var(--u)*40),auto;border:2px solid var(--ink);border-top:calc(var(--u)*1.4) solid var(--yellow);box-shadow:inset 0 0 0 calc(var(--u)*1.4) var(--cobalt-d)}
 .counter::after{content:"Since 2026 · letters, layouts & ink";position:absolute;left:0;right:0;top:45%;text-align:center;font-family:var(--f-display);font-size:max(12px,calc(var(--u)*1.6));color:var(--yellow)}
 .booklet{transform:rotate(-5deg);--r:-5deg}
 .booklet img{width:100%;display:block;border:2px solid var(--ink);box-shadow:calc(var(--u)*.4) calc(var(--u)*.4) 0 #fff,calc(var(--u)*.4) calc(var(--u)*.4) 0 2px var(--ink)}
@@ -176,7 +176,7 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 
 .backroom{display:flex;flex-direction:column;gap:calc(var(--u)*.8)}
 .backroom .doorframe{background:#120d0a}
-.backroom .glow{position:absolute;right:0;top:0;bottom:0;width:38%;background:linear-gradient(90deg,#ffcf6b,#ff9f43)}
+.backroom .glow{position:absolute;right:0;top:0;bottom:0;width:38%;background:linear-gradient(#ffb757,#ffb757)}
 .backroom .leaf{position:absolute;inset:0;background:var(--plaster),var(--cobalt);background-size:calc(var(--u)*30) calc(var(--u)*30),auto;border-right:2px solid var(--ink);transform-origin:left center;transform:perspective(calc(var(--u)*40)) rotateY(-32deg);transition:transform .4s}
 .backroom .leaf::after{content:"";position:absolute;right:14%;top:50%;width:calc(var(--u)*1.4);height:calc(var(--u)*1.4);border-radius:50%;background:#d9a441;border:1.5px solid var(--ink)}
 .backroom:hover .leaf,.backroom:focus-visible .leaf{transform:perspective(calc(var(--u)*40)) rotateY(-52deg)}
@@ -236,26 +236,26 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 @media (max-width:700px){.cork{grid-template-columns:1fr}}
 .zine{position:absolute;width:calc(var(--u)*13);height:calc(var(--u)*18.5);border:2px solid var(--ink);background:url(zine-1.jpg) right center/auto 100% #fff;padding:0;box-shadow:calc(var(--u)*.5) calc(var(--u)*.5) 0 rgba(27,22,38,.25)}
 .zine::before{content:"";position:absolute;left:calc(var(--u)*.6);top:30%;height:40%;width:2px;border-top:calc(var(--u)*1) solid #8a93a6;border-bottom:calc(var(--u)*1) solid #8a93a6}
-.ledge{position:absolute;height:calc(var(--u)*1.8);background:linear-gradient(#b27744,#8a5530);border:2px solid var(--ink)}
+.ledge{position:absolute;height:calc(var(--u)*1.8);background:linear-gradient(#9e663a,#9e663a);border:2px solid var(--ink)}
 .bunting{position:absolute;overflow:visible}
-.spinner .spole{position:absolute;left:50%;top:0;bottom:calc(var(--u)*2);width:calc(var(--u)*.9);margin-left:calc(var(--u)*-.45);background:linear-gradient(90deg,#8a93a6,#5a6478);border:1.5px solid var(--ink)}
+.spinner .spole{position:absolute;left:50%;top:0;bottom:calc(var(--u)*2);width:calc(var(--u)*.9);margin-left:calc(var(--u)*-.45);background:linear-gradient(#727c8f,#727c8f);border:1.5px solid var(--ink)}
 .spinner .spole::before{content:"";position:absolute;left:50%;top:calc(var(--u)*-1.6);width:calc(var(--u)*3);height:calc(var(--u)*1.6);margin-left:calc(var(--u)*-1.5);background:var(--pink);border:1.5px solid var(--ink);border-radius:50% 50% 0 0}
 .spin-cards{position:absolute;left:0;right:0;top:calc(var(--u)*2);display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.4) calc(var(--u)*3);padding:0 calc(var(--u)*3);perspective:calc(var(--u)*60)}
 .spin-cards button{aspect-ratio:2/3;border:2px solid var(--ink);background:#fff center/cover no-repeat;padding:0;position:relative;box-shadow:calc(var(--u)*.4) calc(var(--u)*.4) 0 rgba(27,22,38,.25);transition:transform .35s ease,translate .2s}
 .spin-cards button::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-6%;height:2px;background:#5a6478}
 .spin-cards button:hover,.spin-cards button:focus-visible{translate:0 calc(var(--u)*-.8)}
 .spin-cards.turn button{transform:rotateY(90deg)}
-.spinner .sbase{position:absolute;left:22%;right:22%;bottom:0;height:calc(var(--u)*2.4);background:linear-gradient(90deg,#8a93a6,#5a6478);border:1.5px solid var(--ink);border-radius:50% 50% 0 0}
+.spinner .sbase{position:absolute;left:22%;right:22%;bottom:0;height:calc(var(--u)*2.4);background:linear-gradient(#727c8f,#727c8f);border:1.5px solid var(--ink);border-radius:50% 50% 0 0}
 .spinner .spinbtn{position:absolute;left:50%;bottom:calc(var(--u)*4);transform:translateX(-50%);white-space:nowrap;background:var(--pink)}
 .spinner .spinbtn:hover{transform:translate(calc(-50% - 1px),-1px)}
-.postbox{background:linear-gradient(90deg,#a8271a,#d63a2a 45%,#a8271a);border:2px solid var(--ink);border-radius:calc(var(--u)*4.5) calc(var(--u)*4.5) calc(var(--u)*.6) calc(var(--u)*.6);display:grid;justify-items:center;align-content:start;padding-top:calc(var(--u)*6);gap:calc(var(--u)*1.2)}
+.postbox{background:linear-gradient(#b72d1f,#b72d1f);border:2px solid var(--ink);border-radius:calc(var(--u)*4.5) calc(var(--u)*4.5) calc(var(--u)*.6) calc(var(--u)*.6);display:grid;justify-items:center;align-content:start;padding-top:calc(var(--u)*6);gap:calc(var(--u)*1.2)}
 .postbox::before{content:"";width:60%;height:calc(var(--u)*.9);background:var(--ink);border-radius:2px}
 .postbox::after{content:"POST";font-size:max(9px,calc(var(--u)*1.1));font-weight:700;letter-spacing:.12em;color:#ffe9b0}
-#room[data-shop="stationery"] .wallpaper{background:var(--plaster),linear-gradient(#f6cfd9,#fbe7ed 60%,#f3d3dc);background-size:calc(var(--u)*50) calc(var(--u)*50),auto}
-#room[data-shop="stationery"] .wainscot{background:var(--plaster),linear-gradient(#2f8f6b,#1f6b4f);background-size:calc(var(--u)*50) calc(var(--u)*50),auto;border-top-color:var(--pink)}
+#room[data-shop="stationery"] .wallpaper{background:var(--plaster),linear-gradient(#f7d8e1,#f7d8e1);background-size:calc(var(--u)*50) calc(var(--u)*50),auto}
+#room[data-shop="stationery"] .wainscot{background:var(--plaster),linear-gradient(#277d5d,#277d5d);background-size:calc(var(--u)*50) calc(var(--u)*50),auto;border-top-color:var(--pink)}
 #room[data-shop="stationery"] .floor{background:repeating-conic-gradient(#f4ecdc 0 25%,#2f3a4a 0 50%) 0 0/calc(var(--u)*7) calc(var(--u)*7)}
-#room[data-shop="stationery"] .lamp .shade{background:linear-gradient(90deg,#1f6b4f,#33a07a 45%,#155a40)}
-#room[data-shop="stationery"] .counter{background:var(--plaster),linear-gradient(#2f8f6b,#1f6b4f);background-size:calc(var(--u)*40) calc(var(--u)*40),auto;border-top-color:var(--pink);box-shadow:inset 0 0 0 calc(var(--u)*1.4) #155a40}
+#room[data-shop="stationery"] .lamp .shade{background:linear-gradient(#227758,#227758)}
+#room[data-shop="stationery"] .counter{background:var(--plaster),linear-gradient(#277d5d,#277d5d);background-size:calc(var(--u)*40) calc(var(--u)*40),auto;border-top-color:var(--pink);box-shadow:inset 0 0 0 calc(var(--u)*1.4) #155a40}
 #room[data-shop="stationery"] .counter::after{content:"Paper, post & invites";color:var(--pink)}
 #room[data-shop="stationery"] .panel{background:var(--plaster),var(--green);background-size:400px 400px,auto}
 #room[data-shop="stationery"] .panel span,#room[data-shop="stationery"] #room-title strong{background:var(--pink)}
@@ -266,14 +266,14 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 .gframe::before{content:"";position:absolute;left:22%;right:22%;top:calc(var(--u)*-3.4);height:calc(var(--u)*3.4);background:linear-gradient(to top right,transparent calc(50% - 1px),#3b3150 calc(50% - 1px),#3b3150 calc(50% + 1px),transparent calc(50% + 1px)) left/50% 100% no-repeat,linear-gradient(to top left,transparent calc(50% - 1px),#3b3150 calc(50% - 1px),#3b3150 calc(50% + 1px),transparent calc(50% + 1px)) right/50% 100% no-repeat}
 .gframe::after{content:"";position:absolute;left:50%;top:calc(var(--u)*-4.2);width:calc(var(--u)*1.3);height:calc(var(--u)*1.3);margin-left:calc(var(--u)*-.65);border-radius:50%;background:#d9a441;border:1.5px solid var(--ink)}
 .gframe:hover,.gframe:focus-visible{transform:rotate(-2deg) translateY(calc(var(--u)*-.6));filter:drop-shadow(calc(var(--u)*.6) calc(var(--u)*.8) 0 rgba(27,22,38,.22))}
-.plight{position:absolute;width:calc(var(--u)*12);height:calc(var(--u)*1.4);background:linear-gradient(#f0c766,#b8862b);border:1.5px solid var(--ink);border-radius:calc(var(--u)*.7);pointer-events:none}
-.plight::after{content:"";position:absolute;left:-30%;right:-30%;top:100%;height:calc(var(--u)*20);background:radial-gradient(ellipse at 50% 0,rgba(255,230,150,.6),rgba(255,230,150,0) 70%)}
+.plight{position:absolute;width:calc(var(--u)*12);height:calc(var(--u)*1.4);background:linear-gradient(#d4a648,#d4a648);border:1.5px solid var(--ink);border-radius:calc(var(--u)*.7);pointer-events:none}
+.plight::after{content:"";position:absolute;left:-30%;right:-30%;top:100%;height:calc(var(--u)*16);background:rgba(255,226,140,.28);clip-path:polygon(28% 0,72% 0,100% 100%,0 100%)}
 .easel{pointer-events:none}
-#room[data-shop="framing"] .wallpaper{background:var(--plaster),linear-gradient(#f2d3bf,#f9e6d9 60%,#efcfba);background-size:calc(var(--u)*50) calc(var(--u)*50),auto}
-#room[data-shop="framing"] .wainscot{background:var(--plaster),linear-gradient(#9c3220,#6f1f12);background-size:calc(var(--u)*50) calc(var(--u)*50),auto;border-top-color:#d9a441}
+#room[data-shop="framing"] .wallpaper{background:var(--plaster),linear-gradient(#f3d8c6,#f3d8c6);background-size:calc(var(--u)*50) calc(var(--u)*50),auto}
+#room[data-shop="framing"] .wainscot{background:var(--plaster),linear-gradient(#862819,#862819);background-size:calc(var(--u)*50) calc(var(--u)*50),auto;border-top-color:#d9a441}
 #room[data-shop="framing"] .floor{background:repeating-linear-gradient(45deg,#b98250 0 calc(var(--u)*2.2),#a06a3c calc(var(--u)*2.2) calc(var(--u)*2.45),#c48d59 calc(var(--u)*2.45) calc(var(--u)*4.6),#a06a3c calc(var(--u)*4.6) calc(var(--u)*4.85))}
-#room[data-shop="framing"] .lamp .shade{background:linear-gradient(90deg,#6f1f12,#a8381f 45%,#5e1a10)}
-#room[data-shop="framing"] .counter{background:var(--grain),linear-gradient(#a86c3d,#7a4825);background-size:calc(var(--u)*30) calc(var(--u)*12),auto;border-top-color:#d9a441;box-shadow:inset 0 0 0 calc(var(--u)*1.4) #6a3d1e}
+#room[data-shop="framing"] .lamp .shade{background:linear-gradient(#7c2616,#7c2616)}
+#room[data-shop="framing"] .counter{background:var(--grain),linear-gradient(#915a31,#915a31);background-size:calc(var(--u)*30) calc(var(--u)*12),auto;border-top-color:#d9a441;box-shadow:inset 0 0 0 calc(var(--u)*1.4) #6a3d1e}
 #room[data-shop="framing"] .counter::after{content:"Frames cut to size";color:#f8e3d2}
 #room[data-shop="framing"] .panel{background:var(--plaster),#a8381f;background-size:400px 400px,auto}
 #room[data-shop="framing"] .panel span,#room[data-shop="framing"] #room-title strong,#room[data-shop="framing"] .exit .plate{background:#fbefe0}
@@ -295,11 +295,11 @@ body.in-shop #map,body.in-shop #intro{opacity:0;pointer-events:none}
 .about::after{content:"";position:absolute;left:calc(var(--u)*-1.8);bottom:calc(var(--u)*2.5);width:calc(var(--u)*2.6);height:calc(var(--u)*2.6);background:#fff;border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:skewY(-30deg) rotate(10deg)}
 .till{display:block}
 .till-tag{white-space:nowrap}
-#room[data-shop="gift"] .wallpaper{background:var(--plaster),linear-gradient(#fbe1a0,#fdf0c9 60%,#f8dc98);background-size:calc(var(--u)*50) calc(var(--u)*50),auto}
-#room[data-shop="gift"] .wainscot{background:var(--plaster),linear-gradient(#2d8aa3,#175a6e);background-size:calc(var(--u)*50) calc(var(--u)*50),auto;border-top-color:var(--pink)}
+#room[data-shop="gift"] .wallpaper{background:var(--plaster),linear-gradient(#fbe4ab,#fbe4ab);background-size:calc(var(--u)*50) calc(var(--u)*50),auto}
+#room[data-shop="gift"] .wainscot{background:var(--plaster),linear-gradient(#227288,#227288);background-size:calc(var(--u)*50) calc(var(--u)*50),auto;border-top-color:var(--pink)}
 #room[data-shop="gift"] .floor{background:radial-gradient(circle at 30% 40%,#f2a7b8 0 calc(var(--u)*.5),transparent calc(var(--u)*.55)),radial-gradient(circle at 70% 70%,#2d8aa3 0 calc(var(--u)*.4),transparent calc(var(--u)*.45)),radial-gradient(circle at 60% 20%,#f6d44a 0 calc(var(--u)*.45),transparent calc(var(--u)*.5)),#efe6d6;background-size:calc(var(--u)*5) calc(var(--u)*5),calc(var(--u)*7) calc(var(--u)*7),calc(var(--u)*6) calc(var(--u)*6),auto}
-#room[data-shop="gift"] .lamp .shade{background:linear-gradient(90deg,#175a6e,#2d8aa3 45%,#124955)}
-#room[data-shop="gift"] .counter{background:var(--plaster),linear-gradient(#2d8aa3,#175a6e);background-size:calc(var(--u)*40) calc(var(--u)*40),auto;border-top-color:var(--yellow);box-shadow:inset 0 0 0 calc(var(--u)*1.4) #124955}
+#room[data-shop="gift"] .lamp .shade{background:linear-gradient(#1d6477,#1d6477)}
+#room[data-shop="gift"] .counter{background:var(--plaster),linear-gradient(#227288,#227288);background-size:calc(var(--u)*40) calc(var(--u)*40),auto;border-top-color:var(--yellow);box-shadow:inset 0 0 0 calc(var(--u)*1.4) #124955}
 #room[data-shop="gift"] .counter::after{content:"Thanks for visiting the lane";color:var(--yellow)}
 #room[data-shop="gift"] .panel{background:var(--plaster),#2d8aa3;background-size:400px 400px,auto}
 #room[data-shop="gift"] .panel span,#room[data-shop="gift"] #room-title strong,#room[data-shop="gift"] .exit .plate{background:var(--yellow)}
@@ -345,9 +345,10 @@ body.rc-open #chit{display:none}
   transition:transform .95s cubic-bezier(.7,0,.25,1);display:grid;grid-template-rows:auto 1fr auto}
 #welcome.up{transform:translateY(-102%)}
 #welcome[hidden]{display:none!important}
-.w-housing{height:calc(34px + env(safe-area-inset-top,0px));background:linear-gradient(#5a6478,#3b4356);border-bottom:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,.18)}
+.w-housing{height:calc(34px + env(safe-area-inset-top,0px));background:linear-gradient(#4a5467,#4a5467);border-bottom:3px solid var(--ink);box-shadow:0 6px 0 rgba(0,0,0,.18)}
 .w-body{display:flex;align-items:center;justify-content:center;gap:clamp(20px,5vw,64px);padding-block:24px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));flex-wrap:wrap}
-.w-keeper{width:clamp(130px,20vw,230px);height:auto;flex:none;filter:drop-shadow(0 10px 0 rgba(10,20,60,.25))}
+.keeper-img{object-fit:contain;object-position:50% 0;pointer-events:none}
+.w-keeper{height:clamp(240px,52vh,440px);width:auto;flex:none}
 .w-text{max-width:600px;min-width:0}
 .w-eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#cfe0ff;margin:0 0 12px}
 .w-text h1{text-wrap:balance;font-family:"Bodoni Moda",var(--f-display);font-style:italic;font-weight:600;font-size:clamp(52px,9vw,112px);line-height:.95;margin:0;color:var(--yellow);letter-spacing:-.02em;text-shadow:0 4px 0 rgba(10,20,60,.35)}
@@ -358,8 +359,8 @@ body.rc-open #chit{display:none}
 .w-open{border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:999px;padding:12px 22px;font-size:14px;font-weight:700;box-shadow:4px 4px 0 var(--ink);display:inline-flex;gap:10px;align-items:center;animation:nudge 1.8s ease-in-out infinite}
 .w-open:hover{animation-play-state:paused}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.w-handle{width:min(180px,40vw);height:16px;border-radius:8px;background:linear-gradient(#e0e5ee,#8b96aa);border:2px solid var(--ink)}
-@media (max-width:640px){.w-body{flex-direction:column;text-align:center;gap:14px}.w-sub{margin-inline:auto}}
+.w-handle{width:min(180px,40vw);height:16px;border-radius:8px;background:linear-gradient(#b6becc,#b6becc);border:2px solid var(--ink)}
+@media (max-width:640px){.w-keeper{height:clamp(170px,28vh,240px)}.w-body{flex-direction:column;text-align:center;gap:14px}.w-sub{margin-inline:auto}}
 
 /* ===== see everything ===== */
 #all-btn{position:fixed;z-index:45;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);background:var(--paper);border-radius:999px;padding:9px 15px;font-size:12.5px;font-weight:700;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
@@ -390,7 +391,7 @@ body.grid-open #chit{display:none}
 /* ===== CV on the wall ===== */
 .cvboard{display:grid;justify-items:center;align-content:start;gap:calc(var(--u)*.6);padding:0}
 .cvboard .clip{width:100%;flex:1;aspect-ratio:3/4;background:#9c6236;border:2px solid var(--ink);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1.1);position:relative}
-.cvboard .clip::before{content:"";position:absolute;left:30%;right:30%;top:calc(var(--u)*-.7);height:calc(var(--u)*1.8);background:linear-gradient(#e0e5ee,#8b96aa);border:1.5px solid var(--ink);border-radius:calc(var(--u)*.4)}
+.cvboard .clip::before{content:"";position:absolute;left:30%;right:30%;top:calc(var(--u)*-.7);height:calc(var(--u)*1.8);background:linear-gradient(#b6becc,#b6becc);border:1.5px solid var(--ink);border-radius:calc(var(--u)*.4)}
 .cvboard .sheetcv{display:block;height:100%;background:#fffdf6;border:1px solid var(--ink);border-radius:2px;padding:calc(var(--u)*1.4) calc(var(--u)*1);text-align:left}
 .cvboard .sheetcv em{display:block;font-family:"Bodoni Moda",var(--f-display);font-style:italic;font-weight:600;font-size:max(12px,calc(var(--u)*1.7));line-height:1}
 .cvboard .sheetcv span{display:block;height:calc(var(--u)*.45);background:#d8dce6;border-radius:2px;margin-top:calc(var(--u)*.8)}
@@ -403,7 +404,7 @@ body.grid-open #chit{display:none}
 <section id="welcome" aria-labelledby="w-title">
   <div class="w-housing"></div>
   <div class="w-body">
-    <svg class="w-keeper" id="w-keeper" viewBox="0 0 200 240" aria-hidden="true"></svg>
+    <img class="w-keeper" src="keeper-gift.webp" alt="Krishi, drawn in her gift shop apron">
     <div class="w-text">
       <p class="w-eyebrow">Welcome</p>
       <h1 id="w-title">Hi, I'm Krishi.</h1>
@@ -508,7 +509,7 @@ body.grid-open #chit{display:none}
         <span class="top"></span><span class="leg" style="left:calc(var(--u)*3)"></span><span class="leg" style="right:calc(var(--u)*3)"></span>
       </div>
 
-      <svg class="p stag keeper" data-look="press" style="--x:173;--y:31;--w:24;--h:28.8;--i:8" viewBox="0 0 200 240" aria-hidden="true"></svg>
+      <img class="p stag keeper-img" src="keeper-press.webp" alt="" style="--x:176.2;--y:33;--w:17.5;--h:44;--i:8">
       <div class="p bubble stag" style="--x:199;--y:22;--w:33;--h:8;--i:9">Fresh prints today! Pick anything up, or peek in the back room.</div>
       <div class="p counter stag" style="--x:162;--y:58;--w:58;--h:24;--i:8"></div>
       <div class="p stag" style="--x:166;--y:48.6;--w:17;--h:9.6;--i:10">
@@ -567,7 +568,7 @@ body.grid-open #chit{display:none}
         <button class="btn spinbtn" id="spin">Spin the rack ↻</button>
         <button class="plus" data-plus="postcards" aria-pressed="false" aria-label="Add Postcards for a classmate to your list" style="right:calc(var(--u)*-2);top:calc(var(--u)*-1)">+</button>
       </div>
-      <svg class="p stag keeper" data-look="stationery" style="--x:158;--y:31;--w:24;--h:28.8;--i:6" viewBox="0 0 200 240" aria-hidden="true"></svg>
+      <img class="p stag keeper-img" src="keeper-stationery.webp" alt="" style="--x:163.0;--y:33;--w:14.0;--h:44;--i:6">
       <div class="p bubble stag" style="--x:184;--y:21;--w:31;--h:8;--i:7">Spin the rack for postcards, or flip through our wedding zine!</div>
       <div class="p counter stag" style="--x:148;--y:58;--w:48;--h:24;--i:6"></div>
       <div class="p postbox stag" style="--x:202;--y:54;--w:9;--h:28;--i:8" aria-hidden="true"></div>
@@ -588,29 +589,29 @@ body.grid-open #chit{display:none}
       </button>
       <span class="plight stag" style="left:calc(var(--u)*40.8);top:calc(var(--u)*5.2);--i:2"></span>
       <div class="p stag" style="--x:36;--y:12;--w:21.6;--h:40;--i:2">
-        <button class="gframe" data-open="arts" style="--fc:linear-gradient(135deg,#f6d57a,#b8862b 30%,#f0c766 55%,#9c6e1f 80%,#e9c060);padding:calc(var(--u)*2.2)" aria-label="Open Arts and Crafts"><span class="mat"><img src="frame-arts.jpg" alt=""></span></button>
+        <button class="gframe" data-open="arts" style="--fc:linear-gradient(#d4aa4f,#d4aa4f);padding:calc(var(--u)*2.2)" aria-label="Open Arts and Crafts"><span class="mat"><img src="frame-arts.jpg" alt=""></span></button>
         <button class="plus" data-plus="arts" aria-pressed="false" aria-label="Add Arts and Crafts to your list" style="right:calc(var(--u)*-2.6);top:calc(var(--u)*-1.6)">+</button>
       </div>
       <div class="p stag" style="--x:36;--y:46;--w:22;--h:5;--i:2"><span class="tag" style="left:0;top:0"><b>Arts and Crafts</b>hand-drawn poster</span></div>
       <span class="plight stag" style="left:calc(var(--u)*72.8);top:calc(var(--u)*9.2);--i:3"></span>
       <div class="p stag" style="--x:68;--y:16;--w:21.6;--h:40;--i:3">
-        <button class="gframe" data-open="netflix" style="--fc:linear-gradient(135deg,#2a2630,#141218);padding:calc(var(--u)*1.2)" aria-label="Open Netflix HQ"><span class="mat"><img src="frame-netflix.jpg" alt=""></span></button>
+        <button class="gframe" data-open="netflix" style="--fc:linear-gradient(#1f1c24,#1f1c24);padding:calc(var(--u)*1.2)" aria-label="Open Netflix HQ"><span class="mat"><img src="frame-netflix.jpg" alt=""></span></button>
         <button class="plus" data-plus="netflix" aria-pressed="false" aria-label="Add Netflix HQ to your list" style="right:calc(var(--u)*-2.6);top:calc(var(--u)*-1.6)">+</button>
       </div>
       <div class="p stag" style="--x:68;--y:46;--w:22;--h:5;--i:3"><span class="tag" style="left:0;top:0"><b>Netflix HQ</b>Bauhaus poster</span></div>
       <span class="plight stag" style="left:calc(var(--u)*104.8);top:calc(var(--u)*3.2);--i:4"></span>
       <div class="p stag" style="--x:100;--y:10;--w:21.6;--h:40;--i:4">
-        <button class="gframe" data-open="kid" style="--fc:linear-gradient(135deg,#c08a55,#8a5530 50%,#b07a48);padding:calc(var(--u)*1.8)" aria-label="Open Kid and Teacher"><span class="mat"><img src="frame-kid.jpg" alt=""></span></button>
+        <button class="gframe" data-open="kid" style="--fc:linear-gradient(#a97344,#a97344);padding:calc(var(--u)*1.8)" aria-label="Open Kid and Teacher"><span class="mat"><img src="frame-kid.jpg" alt=""></span></button>
         <button class="plus" data-plus="kid" aria-pressed="false" aria-label="Add Kid and Teacher to your list" style="right:calc(var(--u)*-2.6);top:calc(var(--u)*-1.6)">+</button>
       </div>
       <div class="p stag" style="--x:100;--y:47;--w:22;--h:5;--i:4"><span class="tag" style="left:0;top:0"><b>Kid and Teacher</b>a classmate's story</span></div>
       <span class="plight stag" style="left:calc(var(--u)*136.8);top:calc(var(--u)*8.2);--i:5"></span>
       <div class="p stag" style="--x:132;--y:15;--w:21.6;--h:40;--i:5">
-        <button class="gframe" data-open="stanley" style="--fc:linear-gradient(135deg,#9bc4a0,#5f8f68);padding:calc(var(--u)*1.6)" aria-label="Open Stanley tennis shoes"><span class="mat"><img src="frame-stanley.jpg" alt=""></span></button>
+        <button class="gframe" data-open="stanley" style="--fc:linear-gradient(#7daa84,#7daa84);padding:calc(var(--u)*1.6)" aria-label="Open Stanley tennis shoes"><span class="mat"><img src="frame-stanley.jpg" alt=""></span></button>
         <button class="plus" data-plus="stanley" aria-pressed="false" aria-label="Add Stanley tennis shoes to your list" style="right:calc(var(--u)*-2.6);top:calc(var(--u)*-1.6)">+</button>
       </div>
       <div class="p stag" style="--x:132;--y:46;--w:22;--h:5;--i:5"><span class="tag" style="left:0;top:0"><b>Stanley tennis shoes</b>an invented product</span></div>
-      <svg class="p keeper stag" data-look="framing" style="--x:173;--y:31;--w:24;--h:28.8;--i:7" viewBox="0 0 200 240" aria-hidden="true"></svg>
+      <img class="p stag keeper-img" src="keeper-framing.webp" alt="" style="--x:178.1;--y:33;--w:13.9;--h:44;--i:7">
       <div class="p bubble stag" style="--x:198;--y:20;--w:31;--h:8;--i:8">Every piece here comes off its hook. Pick one up to look closer!</div>
       <div class="p counter stag" style="--x:162;--y:58;--w:50;--h:24;--i:7"></div>
       <svg class="p stag" style="--x:166;--y:52.5;--w:40;--h:6;--i:9" viewBox="0 0 40 6" aria-hidden="true">
@@ -652,7 +653,7 @@ body.grid-open #chit{display:none}
         <div class="row"><span class="jar" style="--c:#fde08c"></span><span class="bookstack"><span style="--c:#c2452f;height:calc(var(--u)*8.5)"></span><span style="--c:#f2a7b8;height:calc(var(--u)*9.5)"></span><span style="--c:#2747a8;height:calc(var(--u)*7.5)"></span></span></div>
       </div>
       <div class="handsign stag" style="left:calc(var(--u)*76);top:calc(var(--u)*63);--i:4" aria-hidden="true">Odds &amp; ends<br>restocking soon</div>
-      <svg class="p stag keeper" data-look="gift" style="--x:126;--y:31;--w:24;--h:28.8;--i:5" viewBox="0 0 200 240" aria-hidden="true"></svg>
+      <img class="p stag keeper-img" src="keeper-gift.webp" alt="" style="--x:131.5;--y:33;--w:13.0;--h:44;--i:5">
       <div class="p about stag" style="--x:154;--y:10;--w:44;--h:20;--i:6"><strong>Hi, I'm Krishi!</strong>What's your name? I run every shop on this lane, and yes, I work overtime. Design is my passion, and honestly, I can't pick a favourite out of everything here. I love experimenting: new art styles, new fonts, new colour palettes, new everything.</div>
       <div class="p stag" style="--x:172;--y:33;--w:13;--h:22;--i:7">
         <button class="obj cvboard" id="cv-btn" style="position:absolute;inset:0" aria-label="Download Krishi's CV"><span class="clip"><span class="sheetcv"><em>Krishi Shah</em><span></span><span></span><span></span><span></span></span></span></button>
@@ -735,6 +736,7 @@ body.grid-open #chit{display:none}
 (()=>{
 const INK="#1b1626";
 const SERIF="DM Serif Display, Georgia, serif",SANS="Montserrat, Avenir Next, sans-serif";
+const SIGNF="Bodoni Moda, DM Serif Display, Georgia, serif",MONO="PT Mono, Andale Mono, ui-monospace, monospace";
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $=s=>document.querySelector(s);
 let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
@@ -787,19 +789,19 @@ const MINI_ST=MINI.replaceAll("#b8322a","#2f8f6b").replaceAll("#8e2219","#1f6b4f
 
 /* ---------- sky ---------- */
 function cloud(x,y,k){const puffs=[[-58,10,24],[-34,-4,32],[-6,-20,40],[30,-30,46],[66,-16,40],[96,0,30],[118,12,22],[-20,16,30],[22,14,36],[62,16,34],[94,18,26]];
-  return`<g filter="url(#soft)">`+puffs.map(([a,b,r])=>`<circle cx="${x+a*k}" cy="${y+b*k}" r="${r*k}" fill="url(#cloudG)"/>`).join("")+`</g>`;}
-$("#skyart").innerHTML=`<defs><linearGradient id="cloudG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".65" stop-color="#f5f9ff"/><stop offset="1" stop-color="#dce9fb"/></linearGradient><filter id="soft" x="-20%" y="-30%" width="140%" height="160%"><feGaussianBlur stdDeviation="1.4"/></filter><radialGradient id="moonG"><stop offset=".6" stop-color="#fff6d6" stop-opacity=".55"/><stop offset="1" stop-color="#fff6d6" stop-opacity="0"/></radialGradient></defs>
+  return`<g>`+puffs.map(([a,b,r])=>`<circle cx="${x+a*k}" cy="${y+b*k}" r="${r*k}" fill="url(#cloudG)"/>`).join("")+`</g>`;}
+$("#skyart").innerHTML=`<defs><linearGradient id="cloudG"><stop offset="0" stop-color="#ffffff"/></linearGradient><filter id="soft" x="-20%" y="-30%" width="140%" height="160%"><feGaussianBlur stdDeviation="1.4"/></filter><radialGradient id="moonG"><stop offset="0" stop-color="#fff6d6" stop-opacity="0"/></radialGradient></defs>
 <circle cx="1180" cy="120" r="80" fill="url(#moonG)"/><circle cx="1180" cy="120" r="42" fill="#fff6d8"/><circle cx="1166" cy="108" r="8" fill="#f1e4b4"/><circle cx="1194" cy="132" r="5.5" fill="#f1e4b4"/>`+cloud(560,200,.9)+cloud(780,130,.6)+cloud(1420,210,.8)+cloud(900,250,.5);
 
 /* back layer kept empty: the gradient sky reads cleaner without far buildings */
 /* ---------- drawing kit for the lane ---------- */
-const F=s=>`<g filter="url(#paint)">${s}</g>`;
+const F=s=>s;
 function awning(x,y,w,h,n,fill){const s=w/n;let d=`M${x} ${y} H${x+w} V${y+h}`;for(let i=0;i<n;i++)d+=` a${s/2} ${s*.36} 0 0 1 ${-s} 0`;
-  return`<path d="M${x} ${y+h+2} H${x+w} V${y+h+20} H${x} Z" fill="url(#gShade)"/><path d="${d} Z" fill="${fill}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M${x} ${y+4} H${x+w}" stroke="rgba(255,255,255,.5)" stroke-width="2"/>`;}
+  return`<path d="M${x} ${y+h+2} H${x+w} V${y+h+20} H${x} Z" fill="url(#gShade)"/><path d="${d} Z" fill="${fill}" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/><path d="M${x} ${y+4} H${x+w}" stroke="rgba(255,255,255,.5)" stroke-width="2"/>`;}
 function win(x,y,w,h,c=2,r=2,frame="#f4ecdc",lit=.35){let m="";
   for(let i=1;i<c;i++)m+=`<line x1="${x+w*i/c}" y1="${y}" x2="${x+w*i/c}" y2="${y+h}" stroke="${frame}" stroke-width="4"/>`;
   for(let j=1;j<r;j++)m+=`<line x1="${x}" y1="${y+h*j/r}" x2="${x+w}" y2="${y+h*j/r}" stroke="${frame}" stroke-width="4"/>`;
-  return`<rect x="${x-9}" y="${y-16}" width="${w+18}" height="10" fill="${frame}" stroke="${INK}" stroke-width="2"/><rect x="${x-4}" y="${y-4}" width="${w+8}" height="${h+8}" fill="${frame}" stroke="${INK}" stroke-width="2.5"/>
+  return`<rect x="${x-9}" y="${y-16}" width="${w+18}" height="10" fill="${frame}" stroke="${INK}" stroke-width="2"/><rect x="${x-4}" y="${y-4}" width="${w+8}" height="${h+8}" fill="${frame}" stroke="${INK}" stroke-width="2"/>
   <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#gWin)"/><rect x="${x}" y="${y+h*.45}" width="${w}" height="${h*.55}" fill="#ffc96b" opacity="${lit}"/>
   <polygon points="${x+w*.22},${y} ${x+w*.42},${y} ${x+w*.24},${y+h} ${x+w*.04},${y+h}" fill="#fff" opacity=".12"/>${m}
   <rect x="${x}" y="${y}" width="${w}" height="6" fill="#000" opacity=".22"/><rect x="${x-10}" y="${y+h+4}" width="${w+20}" height="8" fill="${frame}" stroke="${INK}" stroke-width="2"/>`;}
@@ -807,21 +809,21 @@ function flowers(x,y,w){let s="";const fl=["#ff6f91","#f6d44a","#ff9b54","#fff"]
   for(let i=0;i<w/11;i++){const cx=x+6+i*11;s+=`<ellipse cx="${cx}" cy="${y-5}" rx="8" ry="7" fill="${i%2?"#3f8f4f":"#2b6b3c"}" stroke="${INK}" stroke-width="1.2"/>`;}
   for(let i=0;i<w/16;i++)s+=`<circle cx="${x+9+i*16}" cy="${y-11+(i%2)*4}" r="3.6" fill="${fl[i%4]}" stroke="${INK}" stroke-width="1"/>`;
   return s+`<rect x="${x}" y="${y}" width="${w}" height="15" fill="#c8643a" stroke="${INK}" stroke-width="2"/><rect x="${x}" y="${y}" width="${w}" height="4" fill="#e08a5a"/>`;}
-function railing(x,y,w){let s=`<rect x="${x-6}" y="${y+34}" width="${w+12}" height="9" fill="#ede5d6" stroke="${INK}" stroke-width="2"/><rect x="${x}" y="${y}" width="${w}" height="4" fill="${INK}"/><line x1="${x}" y1="${y+30}" x2="${x+w}" y2="${y+30}" stroke="${INK}" stroke-width="2.5"/>`;
+function railing(x,y,w){let s=`<rect x="${x-6}" y="${y+34}" width="${w+12}" height="9" fill="#ede5d6" stroke="${INK}" stroke-width="2"/><rect x="${x}" y="${y}" width="${w}" height="4" fill="${INK}"/><line x1="${x}" y1="${y+30}" x2="${x+w}" y2="${y+30}" stroke="${INK}" stroke-width="2"/>`;
   for(let bx=x+7;bx<x+w;bx+=14)s+=`<path d="M${bx} ${y+4} V${y+30}" stroke="${INK}" stroke-width="2"/><circle cx="${bx}" cy="${y+17}" r="4" fill="none" stroke="${INK}" stroke-width="1.8"/>`;return s;}
 function bracket(x,y,dir,icon,fill,ic="#fff"){const e=x+dir*62,cx=x+dir*46;
-  return`<path d="M${x} ${y} H${e}" stroke="${INK}" stroke-width="4.5" stroke-linecap="round"/><path d="M${x} ${y+26} C${x+dir*18} ${y+26} ${x+dir*30} ${y+4} ${x+dir*44} ${y+2}" fill="none" stroke="${INK}" stroke-width="3"/>
-  <circle cx="${x+dir*12}" cy="${y+14}" r="6" fill="none" stroke="${INK}" stroke-width="2.5"/><path d="M${e} ${y} c${dir*8} 0 ${dir*8} -10 0 -10" fill="none" stroke="${INK}" stroke-width="3"/>
+  return`<path d="M${x} ${y} H${e}" stroke="${INK}" stroke-width="3" stroke-linecap="round"/><path d="M${x} ${y+26} C${x+dir*18} ${y+26} ${x+dir*30} ${y+4} ${x+dir*44} ${y+2}" fill="none" stroke="${INK}" stroke-width="2"/>
+  <circle cx="${x+dir*12}" cy="${y+14}" r="6" fill="none" stroke="${INK}" stroke-width="2"/><path d="M${e} ${y} c${dir*8} 0 ${dir*8} -10 0 -10" fill="none" stroke="${INK}" stroke-width="2"/>
   <path d="M${cx-10} ${y} V${y+14} M${cx+10} ${y} V${y+14}" stroke="${INK}" stroke-width="2"/>
-  <circle cx="${cx+4}" cy="${y+42}" r="27" fill="#000" opacity=".2"/><circle cx="${cx}" cy="${y+40}" r="27" fill="${fill}" stroke="${INK}" stroke-width="3"/><circle cx="${cx}" cy="${y+40}" r="21" fill="none" stroke="${ic}" stroke-width="1.5" opacity=".7"/>
-  <text x="${cx}" y="${y+51}" text-anchor="middle" font-family="${SERIF}" font-size="30" fill="${ic}">${icon}</text>`;}
-function lantern(x,y,dir=1){return`<circle cx="${x+dir*22}" cy="${y+26}" r="48" fill="url(#gLamp)"/><path d="M${x} ${y} h${dir*22} v6" fill="none" stroke="${INK}" stroke-width="3.5"/><path d="M${x} ${y+16} c${dir*10} 0 ${dir*14} -8 ${dir*14} -14" fill="none" stroke="${INK}" stroke-width="2.5"/>
-  <path d="M${x+dir*22-11} ${y+8} h22 l-4 -6 h-14 Z" fill="${INK}"/><rect x="${x+dir*22-9}" y="${y+8}" width="18" height="26" fill="#ffdf7a" stroke="${INK}" stroke-width="2.5"/><path d="M${x+dir*22} ${y+8} V${y+34}" stroke="${INK}" stroke-width="1.5"/><rect x="${x+dir*22-11}" y="${y+34}" width="22" height="5" fill="${INK}"/>`;}
+  <circle cx="${cx}" cy="${y+40}" r="27" fill="${fill}" stroke="${INK}" stroke-width="2"/><circle cx="${cx}" cy="${y+40}" r="21" fill="none" stroke="${ic}" stroke-width="1.5" opacity=".7"/>
+  <text x="${cx}" y="${y+50}" text-anchor="middle" font-family="${SIGNF}" font-style="italic" font-weight="800" font-size="30" fill="${ic}">${icon}</text>`;}
+function lantern(x,y,dir=1){return`<circle cx="${x+dir*22}" cy="${y+26}" r="48" fill="url(#gLamp)"/><path d="M${x} ${y} h${dir*22} v6" fill="none" stroke="${INK}" stroke-width="3.5"/><path d="M${x} ${y+16} c${dir*10} 0 ${dir*14} -8 ${dir*14} -14" fill="none" stroke="${INK}" stroke-width="2"/>
+  <path d="M${x+dir*22-11} ${y+8} h22 l-4 -6 h-14 Z" fill="${INK}"/><rect x="${x+dir*22-9}" y="${y+8}" width="18" height="26" fill="#ffdf7a" stroke="${INK}" stroke-width="2"/><path d="M${x+dir*22} ${y+8} V${y+34}" stroke="${INK}" stroke-width="1.5"/><rect x="${x+dir*22-11}" y="${y+34}" width="22" height="5" fill="${INK}"/>`;}
 function pool(x,rx=80){return`<ellipse cx="${x}" cy="486" rx="${rx}" ry="11" fill="url(#gPool)"/>`;}
 function vine(x,y,len){let s=`<path d="M${x} ${y} C${x-14} ${y+len*.3} ${x+14} ${y+len*.6} ${x-4} ${y+len}" fill="none" stroke="#3b6b35" stroke-width="2.2"/>`;
   for(let t=.05;t<1;t+=.09){const lx=x+Math.sin(t*7)*9,ly=y+t*len;s+=`<ellipse cx="${lx+((t*100|0)%2?7:-7)}" cy="${ly}" rx="7" ry="3.8" transform="rotate(${(t*100|0)%2?30:-30} ${lx} ${ly})" fill="${(t*100|0)%3?"#6f9a3c":"#4f7d34"}" stroke="${INK}" stroke-width="1"/>`;}return s;}
-function chair(x,y,f=1){return`<g fill="none" stroke="${INK}" stroke-width="3" stroke-linecap="round"><path d="M${x} ${y-30} V${y-52} C${x} ${y-68} ${x+26} ${y-68} ${x+26} ${y-52} V${y-30}"/><path d="M${x+5} ${y-34} V${y-50} C${x+5} ${y-60} ${x+21} ${y-60} ${x+21} ${y-50} V${y-34}"/><ellipse cx="${x+13}" cy="${y-29}" rx="16" ry="4.5"/><path d="M${x-2} ${y-27} L${x-5} ${y} M${x+28} ${y-27} L${x+31} ${y} M${x+7} ${y-25} L${x+6} ${y} M${x+19} ${y-25} L${x+20} ${y}"/><ellipse cx="${x+13}" cy="${y-11}" rx="15" ry="3.5"/></g>`;}
-function table(x,y){return`<ellipse cx="${x}" cy="${y-36}" rx="32" ry="7" fill="#2a2230" stroke="${INK}" stroke-width="2.5"/><path d="M${x} ${y-30} V${y-6}" stroke="${INK}" stroke-width="5"/><path d="M${x-20} ${y} C${x-14} ${y-8} ${x-4} ${y-8} ${x} ${y-6} C${x+4} ${y-8} ${x+14} ${y-8} ${x+20} ${y}" fill="none" stroke="${INK}" stroke-width="3.5" stroke-linecap="round"/>`;}
+function chair(x,y,f=1){return`<g fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"><path d="M${x} ${y-30} V${y-52} C${x} ${y-68} ${x+26} ${y-68} ${x+26} ${y-52} V${y-30}"/><path d="M${x+5} ${y-34} V${y-50} C${x+5} ${y-60} ${x+21} ${y-60} ${x+21} ${y-50} V${y-34}"/><ellipse cx="${x+13}" cy="${y-29}" rx="16" ry="4.5"/><path d="M${x-2} ${y-27} L${x-5} ${y} M${x+28} ${y-27} L${x+31} ${y} M${x+7} ${y-25} L${x+6} ${y} M${x+19} ${y-25} L${x+20} ${y}"/><ellipse cx="${x+13}" cy="${y-11}" rx="15" ry="3.5"/></g>`;}
+function table(x,y){return`<ellipse cx="${x}" cy="${y-36}" rx="32" ry="7" fill="#2a2230" stroke="${INK}" stroke-width="2"/><path d="M${x} ${y-30} V${y-6}" stroke="${INK}" stroke-width="5"/><path d="M${x-20} ${y} C${x-14} ${y-8} ${x-4} ${y-8} ${x} ${y-6} C${x+4} ${y-8} ${x+14} ${y-8} ${x+20} ${y}" fill="none" stroke="${INK}" stroke-width="3.5" stroke-linecap="round"/>`;}
 function vase(x,y){return`<path d="M${x-7} ${y} C${x-9} ${y-10} ${x+9} ${y-10} ${x+7} ${y} Z" fill="#f4ecdc" stroke="${INK}" stroke-width="2"/><circle cx="${x-6}" cy="${y-14}" r="5" fill="#ff9b54" stroke="${INK}" stroke-width="1.2"/><circle cx="${x+5}" cy="${y-16}" r="5" fill="#f6d44a" stroke="${INK}" stroke-width="1.2"/><circle cx="${x}" cy="${y-22}" r="4.5" fill="#ff6f91" stroke="${INK}" stroke-width="1.2"/>`;}
 function lights(x1,x2,y,sag,n){let s=`<path d="M${x1} ${y} Q${(x1+x2)/2} ${y+sag*2} ${x2} ${y}" fill="none" stroke="${INK}" stroke-width="2"/>`,b="";
   for(let i=1;i<n;i++){const t=i/n,px=x1+(x2-x1)*t,py=y+sag*4*t*(1-t);s+=`<circle class="halo" cx="${px}" cy="${py+6}" r="15" fill="url(#gLamp)"/>`;b+=`<path d="M${px} ${py} V${py+3}" stroke="${INK}" stroke-width="2"/><circle class="bulb" cx="${px}" cy="${py+7}" r="5" stroke="${INK}" stroke-width="1.5"/>`;}return s+b;}
@@ -829,15 +831,16 @@ function pot(x,y,c="#c8643a"){return`<path d="M${x-14} ${y-26} L${x+14} ${y-26} 
   <ellipse cx="${x-8}" cy="${y-44}" rx="7" ry="16" transform="rotate(-25 ${x-8} ${y-44})" fill="#3f8f4f" stroke="${INK}" stroke-width="1.5"/><ellipse cx="${x+8}" cy="${y-46}" rx="7" ry="17" transform="rotate(25 ${x+8} ${y-46})" fill="#2b6b3c" stroke="${INK}" stroke-width="1.5"/><ellipse cx="${x}" cy="${y-52}" rx="6" ry="18" fill="#4fa05a" stroke="${INK}" stroke-width="1.5"/>`;}
 function shutter(x,y,w,h,id,down){let l="";for(let yy=y+8;yy<y+h-8;yy+=9)l+=`<line x1="${x}" y1="${yy}" x2="${x+w}" y2="${yy}" stroke="#7d889c" stroke-width="2"/><line x1="${x}" y1="${yy+2}" x2="${x+w}" y2="${yy+2}" stroke="#c9d0dc" stroke-width="1"/>`;
   return`<clipPath id="${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}"/></clipPath><g clip-path="url(#${id})"><g class="shutter"${down?` style="transform:translateY(${down}px)"`:""}><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#gSteel)" stroke="${INK}" stroke-width="2"/>${l}<rect x="${x}" y="${y+h-11}" width="${w}" height="11" fill="#5a6478" stroke="${INK}" stroke-width="2"/><rect x="${x+w/2-14}" y="${y+h-9}" width="28" height="6" fill="#d9a441" stroke="${INK}" stroke-width="1.5"/></g></g>`;}
-function soon(x,y){return`<path d="M${x+20} ${y-18} L${x+50} ${y-34} L${x+80} ${y-18}" fill="none" stroke="${INK}" stroke-width="2"/><rect x="${x}" y="${y-18}" width="100" height="52" rx="10" fill="#24202e" stroke="${INK}" stroke-width="2.5"/><rect x="${x+5}" y="${y-13}" width="90" height="42" rx="7" fill="none" stroke="#c9a46a" stroke-width="1.5"/><text x="${x+50}" y="${y+3}" text-anchor="middle" font-family="${SERIF}" font-size="17" fill="#fffdf6">Opening</text><text x="${x+50}" y="${y+23}" text-anchor="middle" font-family="${SERIF}" font-size="17" fill="#f6d44a">soon</text>`;}
-function sign(cx,y,title,sub,fill,col,size=40,w=400,h=64,gold){const x=cx-w/2;
-  return`<rect x="${x+5}" y="${y+5}" width="${w}" height="${h}" rx="12" fill="#000" opacity=".22"/><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="12" fill="${fill}" stroke="${INK}" stroke-width="3"/><rect x="${x+8}" y="${y+8}" width="${w-16}" height="${h-16}" rx="7" fill="none" stroke="${gold||col}" stroke-width="${gold?3:1.5}"/>
-  <text x="${cx}" y="${y+(sub?h*.52:h*.68)}" text-anchor="middle" font-family="${SERIF}" font-size="${size}" fill="${col}">${title}</text>${sub?`<text x="${cx}" y="${y+h-13}" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="10" letter-spacing="3.5" fill="${col}">${sub}</text>`:""}`;}
+function soon(x,y){return`<path d="M${x+20} ${y-18} L${x+50} ${y-34} L${x+80} ${y-18}" fill="none" stroke="${INK}" stroke-width="2"/><rect x="${x}" y="${y-18}" width="100" height="52" rx="10" fill="#24202e" stroke="${INK}" stroke-width="2"/><rect x="${x+5}" y="${y-13}" width="90" height="42" rx="7" fill="none" stroke="#c9a46a" stroke-width="1.5"/><text x="${x+50}" y="${y+3}" text-anchor="middle" font-family="${SERIF}" font-size="17" fill="#fffdf6">Opening</text><text x="${x+50}" y="${y+23}" text-anchor="middle" font-family="${SERIF}" font-size="17" fill="#f6d44a">soon</text>`;}
+function sign(cx,y,title,sub,fill,col,size=40,w=400,h=64,gold){const x=cx-w/2,r=Math.round(h*.3);
+  return`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}" stroke="#000" stroke-width="2"/><rect x="${x+7}" y="${y+7}" width="${w-14}" height="${h-14}" rx="${r-5}" fill="none" stroke="#000" stroke-width="2"/>
+  <text x="${cx}" y="${y+(sub?h*.56:h*.66)}" text-anchor="middle" font-family="${SIGNF}" font-style="italic" font-weight="800" font-size="${size}" letter-spacing="-.5" fill="${col}">${title}</text>${sub?`<text x="${cx}" y="${y+h*.82}" text-anchor="middle" font-family="${MONO}" font-size="10.5" letter-spacing="1" fill="${col}">${sub.replaceAll(" · "," | ")}</text>`:""}`;}
 const S=(...a)=>{const s=sign(...a),i=s.indexOf("<text");return F(s.slice(0,i))+s.slice(i);};
-function wall(x,y,w,h,grad,shadow){return`<rect x="${x+12}" y="${y+10}" width="${w}" height="${h-10}" fill="${shadow}"/><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#${grad})" stroke="${INK}" stroke-width="3"/><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#gSide)"/>`;}
-function cornice(x,y,w,c){return`<rect x="${x-10}" y="${y}" width="${w+20}" height="14" fill="${c}" stroke="${INK}" stroke-width="2.5"/><rect x="${x-4}" y="${y+14}" width="${w+8}" height="7" fill="${c}" stroke="${INK}" stroke-width="2"/><rect x="${x-4}" y="${y+21}" width="${w+8}" height="8" fill="#000" opacity=".14"/>`;}
+function wall(x,y,w,h,grad,shadow){return`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#${grad})" stroke="${INK}" stroke-width="2"/><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#gSide)"/>`;}
+function cornice(x,y,w,c){return`<rect x="${x-10}" y="${y}" width="${w+20}" height="14" fill="${c}" stroke="${INK}" stroke-width="2"/><rect x="${x-4}" y="${y+14}" width="${w+8}" height="7" fill="${c}" stroke="${INK}" stroke-width="2"/><rect x="${x-4}" y="${y+21}" width="${w+8}" height="8" fill="#000" opacity=".14"/>`;}
 
-const lg=(id,a,b)=>`<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`;
+const mixc=(a,b)=>"#"+[1,3,5].map(i=>Math.round((parseInt(a.substr(i,2),16)+parseInt(b.substr(i,2),16))/2).toString(16).padStart(2,"0")).join("");
+const lg=(id,a,b)=>`<linearGradient id="${id}"><stop offset="0" stop-color="${mixc(a,b)}"/></linearGradient>`;
 let w=`<defs>
 <filter id="paint" x="-3%" y="-3%" width="106%" height="106%" color-interpolation-filters="sRGB">
  <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" result="t"/>
@@ -854,10 +857,10 @@ let w=`<defs>
 ${lg("gBlue","#d3def4","#8ea3cf")}${lg("gTerra","#f5ad84","#c95c37")}${lg("gSage","#c6e0b2","#6fa06a")}${lg("gYell","#fde08c","#e3a22f")}
 ${lg("gPeach","#f7cdb6","#e09a7c")}${lg("gLav","#d2c4ea","#9d88c8")}${lg("gWin","#2c2442","#5a3836")}${lg("gLit","#fff4d6","#f6c983")}${lg("gSteel","#b9c2d1","#8b96aa")}
 ${lg("gCob","#3359c4","#1d3888")}${lg("gWood","#a8381f","#6f1f12")}${lg("gGreen","#2a8a64","#155a40")}${lg("gTeal","#2d8aa3","#175a6e")}${lg("gRoad","#525c70","#3f4759")}
-<linearGradient id="gShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1030" stop-opacity=".38"/><stop offset="1" stop-color="#1b1030" stop-opacity="0"/></linearGradient>
-<linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".25" stop-color="#fff" stop-opacity="0"/><stop offset=".85" stop-color="#1b1030" stop-opacity="0"/><stop offset="1" stop-color="#1b1030" stop-opacity=".22"/></linearGradient>
-<radialGradient id="gLamp"><stop offset="0" stop-color="#ffe58a" stop-opacity=".9"/><stop offset=".45" stop-color="#ffd76a" stop-opacity=".35"/><stop offset="1" stop-color="#ffd76a" stop-opacity="0"/></radialGradient>
-<radialGradient id="gPool"><stop offset="0" stop-color="#ffe08a" stop-opacity=".7"/><stop offset="1" stop-color="#ffe08a" stop-opacity="0"/></radialGradient>
+<linearGradient id="gShade"><stop offset="0" stop-color="#1b1030" stop-opacity=".16"/></linearGradient>
+<linearGradient id="gSide"><stop offset="0" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<radialGradient id="gLamp"><stop offset="0" stop-color="#ffe58a" stop-opacity="0"/></radialGradient>
+<radialGradient id="gPool"><stop offset="0" stop-color="#ffe08a" stop-opacity="0"/></radialGradient>
 <pattern id="pYB" width="46" height="10" patternUnits="userSpaceOnUse"><rect width="23" height="10" fill="#f6d44a"/><rect x="23" width="23" height="10" fill="#fffdf6"/></pattern>
 <pattern id="pRC" width="40" height="10" patternUnits="userSpaceOnUse"><rect width="20" height="10" fill="#c2452f"/><rect x="20" width="20" height="10" fill="#fdf1dc"/></pattern>
 <pattern id="pPW" width="40" height="10" patternUnits="userSpaceOnUse"><rect width="20" height="10" fill="#f2a7b8"/><rect x="20" width="20" height="10" fill="#fffdf6"/></pattern>
@@ -869,11 +872,11 @@ ${lg("gCob","#3359c4","#1d3888")}${lg("gWood","#a8381f","#6f1f12")}${lg("gGreen"
 let pav="";for(let x=-20,i=0;x<3800;x+=44,i++){pav+=`<rect x="${x+(i%2)*6}" y="471" width="42" height="14" rx="2" fill="${["#c9d0db","#d6dce5","#c0c8d4"][i%3]}" stroke="#a3adbd" stroke-width="1.5"/><rect x="${x+22}" y="486" width="42" height="14" rx="2" fill="${["#d6dce5","#c0c8d4","#cbd2dd"][i%3]}" stroke="#a3adbd" stroke-width="1.5"/>`;}
 let dash="";for(let x=30;x<3800;x+=150)dash+=`<rect x="${x}" y="553" width="70" height="7" fill="#f4efe2"/>`;
 let road="";for(let i=0;i<60;i++)road+=`<ellipse cx="${rnd()*3800}" cy="${520+rnd()*76}" rx="${18+rnd()*40}" ry="${3+rnd()*4}" fill="#5c667b" opacity=".6"/>`;
-w+=`<rect x="0" y="468" width="3800" height="34" fill="#c6cdd8" stroke="${INK}" stroke-width="2.5"/>${pav}<rect x="0" y="468" width="3800" height="12" fill="url(#gShade)"/><rect x="0" y="500" width="3800" height="10" fill="#8a93a6" stroke="${INK}" stroke-width="2"/><rect x="0" y="510" width="3800" height="90" fill="url(#gRoad)"/>${road}${dash}`;
+w+=`<rect x="0" y="468" width="3800" height="34" fill="#c6cdd8" stroke="${INK}" stroke-width="2"/>${pav}<rect x="0" y="468" width="3800" height="12" fill="url(#gShade)"/><rect x="0" y="500" width="3800" height="10" fill="#8a93a6" stroke="${INK}" stroke-width="2"/><rect x="0" y="510" width="3800" height="90" fill="url(#gRoad)"/>${road}${dash}`;
 
 /* street sign */
-w+=`<rect x="405" y="250" width="10" height="220" fill="${INK}"/><rect x="306" y="172" width="220" height="92" rx="12" fill="#000" opacity=".2"/><rect x="300" y="166" width="220" height="92" rx="12" fill="#1d4fb3" stroke="${INK}" stroke-width="3"/><rect x="308" y="174" width="204" height="76" rx="8" fill="none" stroke="#fff" stroke-width="2.5"/>
-<text x="410" y="210" text-anchor="middle" font-family="Yatra One, serif" font-size="30" fill="#fff">कृषि लेन</text><text x="410" y="238" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="14" letter-spacing="3" fill="#fff">KRISHI'S LANE</text>`;
+w+=`<rect x="405" y="250" width="10" height="220" fill="${INK}"/><rect x="306" y="172" width="220" height="92" rx="12" fill="#000" opacity=".2"/><rect x="300" y="166" width="220" height="92" rx="12" fill="#1d4fb3" stroke="${INK}" stroke-width="2"/><rect x="308" y="174" width="204" height="76" rx="8" fill="none" stroke="#fff" stroke-width="2"/>
+<text x="410" y="210" text-anchor="middle" font-family="Yatra One, serif" font-size="30" fill="#fff">कृषि लेन</text><text x="410" y="238" text-anchor="middle" font-family="${MONO}" font-size="14" letter-spacing="2.5" fill="#fff">KRISHI'S LANE</text>`;
 
 /* filler A: peach apartment with washing on the balcony */
 {let a=wall(560,150,200,320,"gPeach","#7a4a3a55")+`<rect x="600" y="118" width="40" height="32" fill="#2a3245" stroke="${INK}" stroke-width="2"/><ellipse cx="620" cy="118" rx="20" ry="5" fill="#2a3245" stroke="${INK}" stroke-width="2"/>`;
@@ -883,38 +886,29 @@ w+=`<rect x="405" y="250" width="10" height="220" fill="${INK}"/><rect x="306" y
  a+=`<rect x="734" y="300" width="30" height="22" fill="#d9dee8" stroke="${INK}" stroke-width="2"/><circle cx="749" cy="311" r="6" fill="none" stroke="${INK}" stroke-width="1.5"/>`+pot(588,470);
  w+=F(a);}
 
-/* ================= PRINTING PRESS ================= */
-{let a=wall(800,64,460,406,"gBlue","#0e1a4a66")+cornice(800,52,460,"#eef2fb")+`<rect x="1170" y="18" width="44" height="34" fill="#2a3245" stroke="${INK}" stroke-width="2"/><ellipse cx="1192" cy="18" rx="22" ry="5" fill="#3a4258" stroke="${INK}" stroke-width="2"/>`;
- a+=`<rect x="800" y="84" width="22" height="386" fill="#7f95c4" stroke="${INK}" stroke-width="2"/><rect x="1238" y="84" width="22" height="386" fill="#7f95c4" stroke="${INK}" stroke-width="2"/>`;
- a+=win(852,104,104,112,2,3,"#f4ecdc",.5)+win(1104,104,104,112,2,3,"#f4ecdc",.4)+railing(844,186,120)+flowers(1098,226,116)+vine(1110,240,110);
- a+=`<rect x="984" y="118" width="92" height="76" rx="38" fill="#f4ecdc" stroke="${INK}" stroke-width="2.5"/><rect x="992" y="126" width="76" height="60" rx="30" fill="none" stroke="#2747a8" stroke-width="1.5"/>`;
- a+=`<rect x="818" y="320" width="424" height="150" fill="url(#gCob)" stroke="${INK}" stroke-width="3"/>
- <rect x="830" y="344" width="254" height="112" fill="#0e1430" stroke="${INK}" stroke-width="3"/><rect x="834" y="348" width="246" height="104" fill="url(#gLit)"/>
- <path d="M842 368 Q957 380 1072 368" fill="none" stroke="${INK}" stroke-width="1.5"/>
- <rect x="858" y="370" width="44" height="30" fill="#141a2b" stroke="${INK}" stroke-width="1.5"/><rect x="867" y="378" width="26" height="3" fill="#fff"/><rect x="867" y="385" width="26" height="3" fill="#fff"/>
- <rect x="934" y="373" width="44" height="30" fill="#e9f0a5" stroke="${INK}" stroke-width="1.5"/><rect x="940" y="378" width="32" height="20" fill="#4a1530"/>
- <rect x="1010" y="370" width="44" height="30" fill="#a8d8f0" stroke="${INK}" stroke-width="1.5"/><rect x="1016" y="375" width="32" height="20" fill="#b31f24"/>
- <rect x="1002" y="410" width="70" height="42" fill="#9c6236" stroke="${INK}" stroke-width="2"/><path d="M1002 424 H1072 M1002 438 H1072" stroke="${INK}" stroke-width="1.5"/>
- <g transform="translate(870 360) scale(.78)">${MINI}</g>
- <polygon points="880,348 912,348 868,452 836,452" fill="#fff" opacity=".18"/><line x1="957" y1="344" x2="957" y2="456" stroke="${INK}" stroke-width="3"/>
- <rect x="830" y="456" width="254" height="14" fill="#1d3888" stroke="${INK}" stroke-width="2"/>`;
- w+=F(a);
- w+=`<text x="1030" y="152" text-anchor="middle" font-family="${SANS}" font-weight="700" font-size="11" letter-spacing="3" fill="#2747a8">EST.</text><text x="1030" y="180" text-anchor="middle" font-family="${SERIF}" font-size="26" fill="${INK}">2026</text>`;
- w+=`<g class="shop" id="shop-press">`+lights(822,1238,236,10,12)+S(1030,250,"Printing Press","LETTERS · LAYOUTS · INK","#f6d44a",INK,40,410,66)+`
+/* ================= PRINTING PRESS (Krishi's artwork) ================= */
+{const PP_ART=`<defs> <clipPath id="pp-clippath"> <path fill="none" d="M436.23,329.41c-11.24,13.84-22.36,16.78-33.27,0-9.62,14.16-20.51,16.41-33.4,0-11.18,16.89-21.13,13.59-30.45,0-11.23,14.24-22.53,16.21-33.4,0-11.85,11.45-23.39,13.88-34.38,0-10.15,13.47-20.3,11.83-30.45,0-9.7,13.37-20.64,11.91-32.91,0-11.89,14.21-22.25,10.96-31.93,0-13.15,14.26-23.79,10.79-33.4,0-10.41,11.58-20.74,13.43-30.95,0-11.98,12.87-22.89,12.13-32.91,0-9.26,10.72-19.24,14.16-30.95,0-11.22,11.92-22.05,12.94-32.38,0v-24.92s420.78,0,420.78,0v24.92Z"/> </clipPath> </defs> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#c4f5ff" x="15.78" y="1" width="420.78" height="456.47"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#8c4111" x="1" y="1" width="450.34" height="14.71"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#8c4111" x="9.85" y="15.71" width="432.84" height="7.04"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#aadbff" x="15.78" y="78.57" width="21.03" height="378.9"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#aadbff" x="415.53" y="79.27" width="21.03" height="378.9"/> <g> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#fff" x="265.97" y="67.3" width="117.83" height="131.59"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#ae8d6a" x="272.61" y="73.03" width="104.76" height="120.05"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#aadbff" x="256.94" y="56.39" width="137.1" height="10.91"/> <rect fill="#fff" x="321.91" y="74.03" width="5.57" height="117.73"/> <rect fill="#fff" x="322.41" y="61.96" width="5.57" height="102.17" transform="translate(212.15 438.23) rotate(-90)"/> <rect fill="#fff" x="322.21" y="105.01" width="5.57" height="102.17" transform="translate(168.9 481.08) rotate(-90)"/> </g> <g> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#fff" x="69.29" y="67.3" width="117.83" height="131.59"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#ae8d6a" x="75.94" y="73.03" width="104.76" height="120.05"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#aadbff" x="60.26" y="56.39" width="137.1" height="10.91"/> <rect fill="#fff" x="125.24" y="74.03" width="5.57" height="117.73"/> <rect fill="#fff" x="125.73" y="61.96" width="5.57" height="102.17" transform="translate(15.47 241.55) rotate(-90)"/> <rect fill="#fff" x="125.53" y="105.01" width="5.57" height="102.17" transform="translate(-27.78 284.41) rotate(-90)"/> </g> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#b65b3a" x="265.97" y="198.89" width="117.83" height="14.84"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M269.27,182.67c11.86-.93,9.05,10,7.04,16.22h-10.18s-8.32-15.32,3.14-16.22Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M280.62,183.13c11.18-.88,8.53,9.43,6.64,15.3h-9.6s-7.84-14.45,2.96-15.3Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M376.06,183.13c11.17-.88,8.52,9.43,6.63,15.3h-9.58s-7.83-14.45,2.96-15.3Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M363.58,182.67c12.6-.89,9.61,9.63,7.48,15.62h-10.81s-8.84-14.76,3.33-15.62Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M351.79,182.76c12.55-.88,9.58,9.44,7.45,15.31h-10.77s-8.8-14.47,3.32-15.31Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M339.87,182.67c12.58-.9,9.6,9.71,7.46,15.76h-10.79s-8.82-14.89,3.33-15.76Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M291.88,183.13c12.07-.88,9.21,9.43,7.16,15.3h-10.35s-8.46-14.45,3.19-15.3Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M327.52,181.54c12.46-.95,9.51,10.24,7.39,16.62h-10.69s-8.74-15.7,3.3-16.62Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M314.46,182.76c11.73-.88,8.95,9.43,6.96,15.3h-10.07s-8.23-14.45,3.1-15.3Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M303.2,181.54c11.64-.95,8.88,10.18,6.9,16.52h-9.98s-8.16-15.6,3.08-16.52Z"/> <path fill="#fe7191" d="M269.69,189.17l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fedd91" d="M284.09,187.8l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#aadbff" d="M295.57,190.91l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fe9b5e" d="M304.83,186.73l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#9a78dd" d="M321.67,190.85l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fedd91" d="M329.75,186.73l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fe7191" d="M346.05,187.11l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#9affab" d="M356.72,190.24l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fbb03b" d="M369.71,189.7l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fc8aa4" d="M382.26,189.66l-.75.32.17.8c.18.83-.87,1.36-1.43.72l-.54-.61-.71.41c-.74.43-1.56-.41-1.13-1.14l.41-.7-.6-.55c-.63-.57-.1-1.61.74-1.43l.79.18.33-.74c.35-.78,1.5-.59,1.58.26l.08.81.81.09c.85.09,1.03,1.25.24,1.59Z"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#b65b3a" x="69.11" y="199.34" width="118.9" height="14.84"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M72.44,183.12c11.97-.93,9.13,10,7.1,16.22h-10.27s-8.39-15.32,3.17-16.22Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M83.89,183.58c11.28-.88,8.61,9.43,6.7,15.3h-9.68s-7.91-14.45,2.99-15.3Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M180.2,183.58c11.27-.88,8.6,9.43,6.69,15.3h-9.67s-7.9-14.45,2.98-15.3Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M167.61,183.12c12.71-.89,9.7,9.63,7.54,15.62h-10.91s-8.92-14.76,3.36-15.62Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M155.7,183.22c12.66-.88,9.66,9.44,7.51,15.31h-10.87s-8.88-14.47,3.35-15.31Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M143.68,183.12c12.69-.9,9.68,9.71,7.53,15.76h-10.89s-8.9-14.89,3.36-15.76Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M95.25,183.58c12.18-.88,9.29,9.43,7.23,15.3h-10.45s-8.54-14.45,3.22-15.3Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M131.22,181.99c12.57-.95,9.59,10.24,7.46,16.62h-10.79s-8.82-15.7,3.33-16.62Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2e6d3d" d="M118.05,183.22c11.84-.88,9.03,9.43,7.03,15.3h-10.16s-8.3-14.45,3.13-15.3Z"/> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#419051" d="M106.68,181.99c11.74-.95,8.96,10.18,6.97,16.52h-10.07s-8.23-15.6,3.11-16.52Z"/> <path fill="#fe7191" d="M72.87,189.62l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fedd91" d="M87.4,188.25l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#aadbff" d="M98.98,191.37l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fe9b5e" d="M108.33,187.19l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#9a78dd" d="M125.31,191.3l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fedd91" d="M133.47,187.19l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fe7191" d="M149.91,187.56l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#9affab" d="M160.68,190.69l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fbb03b" d="M173.79,190.15l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <path fill="#fc8aa4" d="M186.45,190.11l-.75.32.17.81c.18.83-.86,1.36-1.43.73l-.56-.63-.73.42c-.74.42-1.56-.41-1.12-1.14l.42-.71-.61-.54c-.64-.57-.1-1.61.73-1.43l.81.18.35-.77c.35-.78,1.5-.59,1.58.26l.08.84.82.09c.85.09,1.03,1.25.24,1.59Z"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#c4f5ff" x="36.81" y="304.49" width="378.71" height="153.68"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2f3c88" x="305.31" y="322.47" width="93.11" height="135.7"/> <g> <rect fill="#fefead" x="36.81" y="239.02" width="378.71" height="65.47" rx="19" ry="19"/> <path d="M396.52,303.24H56.86c-5.99,0-11.63-2.08-15.58-6.76-2.05-2.43-3.48-5.38-4.1-8.5-.18-.88-.26-1.77-.34-2.66-.1-1.11-.01.57-.02.02,0-.38,0-.76,0-1.13v-11.7c0-4.17,0-8.34,0-12.51,0-.49,0-.99,0-1.48,0-.13,0-.25,0-.38,0-.03,0-.06,0-.09.01-.07.09-.6,0,.24s.09-.98.06-.74c.29-3.2,1.4-6.31,3.21-8.96,3.8-5.57,9.98-8.31,16.59-8.31h336.31c1.17,0,2.34,0,3.51,0,5.81.04,11.35,2.68,14.95,7.26,1.97,2.51,3.3,5.51,3.81,8.66.07.45.13.9.17,1.35.02.26,0,.56.05.82.1.47-.02-.25.01-.33-.02.06,0,.17,0,.23,0,.43,0,.85,0,1.28,0,8.08,0,16.17,0,24.25,0,.45,0,.9,0,1.35,0,.1,0,.2,0,.3,0,.01,0,.03,0,.04-.21-.57.03-.62-.02-.16-.03.27-.04.54-.06.81-.3,3.09-1.38,6.08-3.11,8.66-3.53,5.27-9.49,8.39-15.8,8.45-.03,0-.01,2.5,0,2.5,6.6-.06,12.8-3.47,16.24-9.13,2.35-3.86,2.77-8,2.77-12.4v-24.29c0-4.02-.15-7.89-1.99-11.59-2.91-5.85-8.79-9.9-15.3-10.48-1.55-.14-3.13-.08-4.68-.08h-63.92c-8.41,0-16.81,0-25.22,0-9.12,0-18.24,0-27.36,0h-28.59c-9.77,0-19.54,0-29.31,0h-29c-9.39,0-18.78,0-28.17,0-8.78,0-17.55,0-26.33,0H56.58c-7.13,0-13.77,3.36-17.34,9.69-2.14,3.8-2.44,7.83-2.44,12.07,0,4.03,0,8.06,0,12.09v12.22c0,4.22.27,8.25,2.37,12.05,3.53,6.41,10.21,9.84,17.39,9.84h339.97s.02-2.5,0-2.5Z"/> </g> <rect fill="#fce9c3" stroke="#000" stroke-miterlimit="10" stroke-width="2" x="313.89" y="322" width="76.67" height="85.32"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#fefead" x="319.39" y="334.26" width="65.63" height="33.92" rx="9.24" ry="9.24"/> <path d="M394.92,295.95H60.28c-1.17,0-2.35.01-3.52,0-5.11-.05-9.8-3.11-11.75-7.88-.29-.72-.52-1.46-.67-2.22-.08-.39-.14-.78-.18-1.17-.01-.13-.25-1.01-.06-.39.21.7.02.3,0,.24-.07-.22,0-.57,0-.8v-4.46c0-4.43,0-8.87,0-13.3v-5.2c0-.48,0-.95,0-1.43,0-.1,0-.21,0-.31,0,0,0-.06,0-.06.09.03-.09,1.07.04.19.05-.33.06-.66.12-.99,1-6.09,6.36-10.53,12.49-10.6.27,0,.54,0,.81,0h336.36c.33,0,.66,0,.98,0,5.34.06,10.2,3.41,11.97,8.5.26.74.44,1.5.56,2.27.03.17.05.34.07.51.01.13.25,1.01.06.39-.05-.16,0-.35,0-.19.02.32,0,.64,0,.95v22.89c0,.43,0,.86,0,1.3,0,.11,0,.22,0,.32,0,.14-.05-.08,0-.21.19-.62-.04.25-.06.39-.02.17-.04.34-.07.51-.92,6.18-6.33,10.68-12.51,10.77-.03,0,0,2.5,0,2.5,6.44-.09,11.98-4.97,12.59-11.44.26-2.68.07-5.47.07-8.15,0-7.14.22-14.31-.01-21.44-.21-6.38-5.2-11.79-11.61-12.31-.57-.05-1.14-.04-1.72-.04h-99.41c-8.97,0-17.94,0-26.92,0s-18.57,0-27.85,0H57.46c-.47,0-.94,0-1.41.02-6.32.34-11.51,5.51-11.93,11.81-.18,2.71-.04,5.48-.04,8.19,0,4.48,0,8.96,0,13.45,0,2.73-.16,5.53.05,8.26.5,6.38,5.88,11.47,12.27,11.65,1.11.03,2.22,0,3.32,0h335.2s.02-2.5,0-2.5Z"/> <g> <path d="M144.87,258.13c.7-4.03-.9-6.94-3.78-6.94l.06-.35c.54-.16,1.12-.22,1.82-.22,4.83,0,7.68,3.14,6.91,7.49-.74,4.19-4.42,7.14-9.02,7.14-.83,0-1.73-.06-2.98-.26l-.93,5.31c-.32,1.79,0,3.46,1.25,4.1l-.03.22h-8.35l.03-.22c1.5-.64,2.4-2.3,2.72-4.1l2.66-15.14c.32-1.79,0-3.46-1.25-4.1l.03-.22h6.37l-2.43,13.79c3.58,0,6.21-2.46,6.91-6.5Z"/> <path d="M151.08,265.87c.35-1.95-.26-2.72-1.44-2.98l.03-.22,6.59-2.5h.22l-.74,4.16c1.09-1.7,3.04-4.38,4.83-4.38,1.22,0,1.92,1.02,1.7,2.37-.19,1.12-1.02,2.08-2.08,2.3-.48-.8-1.22-1.18-2.02-1.18s-1.79.45-2.53,1.31l-1.15,6.66c-.32,1.79.19,2.34,1.44,2.98l-.03.22h-8.35l.03-.22c1.5-.64,2.21-1.18,2.53-2.98l.96-5.54Z"/> <path d="M163.4,265.87c.35-1.95-.26-2.72-1.44-2.98l.03-.22,6.59-2.5h.22l-1.98,11.23c-.32,1.79.19,2.34,1.44,2.98l-.03.22h-8.35l.03-.22c1.5-.64,2.21-1.18,2.53-2.98l.96-5.54ZM165.03,257.17c.19-1.12,1.09-2.21,2.46-2.21s1.86,1.09,1.66,2.21c-.19,1.09-1.09,2.18-2.43,2.18s-1.89-1.09-1.7-2.18Z"/> <path d="M177.16,260.18l-1.98,11.23c-.32,1.73.16,2.34,1.34,2.94,1.57-.7,2.11-1.38,2.4-2.94l.83-4.7c.67-3.87.51-4.96-.67-4.96-.58,0-1.12.29-1.57.74h-.22c.8-1.66,2.18-2.53,4.03-2.53,2.69,0,3.68,1.82,3.01,5.6l-1.02,5.86c-.29,1.63,0,2.27,1.44,2.98l-.03.22h-16.48l.03-.22c1.5-.64,2.21-1.18,2.53-2.98l.96-5.54c.35-1.95-.26-2.72-1.44-2.98l.03-.22,6.59-2.5h.22Z"/> <path d="M195.59,271.44h.22c-1.22,1.98-3.07,3.39-5.44,3.39s-3.74-1.38-3.39-3.39l1.66-9.41h-2.18l.06-.22c2.59-.77,5.06-3.2,7.46-6.62h.22l-.96,5.5,2.94-.51.48,1.86h-3.68l-1.34,7.62c-.38,2.18-.03,3.14,1.18,3.14.86,0,1.82-.45,2.75-1.34Z"/> <path d="M198.31,265.87c.35-1.95-.26-2.72-1.44-2.98l.03-.22,6.59-2.5h.22l-1.98,11.23c-.32,1.79.19,2.34,1.44,2.98l-.03.22h-8.35l.03-.22c1.5-.64,2.21-1.18,2.53-2.98l.96-5.54ZM199.94,257.17c.19-1.12,1.09-2.21,2.46-2.21s1.86,1.09,1.66,2.21c-.19,1.09-1.09,2.18-2.43,2.18s-1.89-1.09-1.7-2.18Z"/> <path d="M212.07,260.18l-1.98,11.23c-.32,1.73.16,2.34,1.34,2.94,1.57-.7,2.11-1.38,2.4-2.94l.83-4.7c.67-3.87.51-4.96-.67-4.96-.58,0-1.12.29-1.57.74h-.22c.8-1.66,2.18-2.53,4.03-2.53,2.69,0,3.68,1.82,3.01,5.6l-1.02,5.86c-.29,1.63,0,2.27,1.44,2.98l-.03.22h-16.48l.03-.22c1.5-.64,2.21-1.18,2.53-2.98l.96-5.54c.35-1.95-.26-2.72-1.44-2.98l.03-.22,6.59-2.5h.22Z"/> <path d="M224.71,282.51c-4.38,0-6.75-1.76-6.21-4.8,1.15-6.5,12.7-3.94,13.22-6.94.03-.22.03-.45-.06-.74l.26-.1c.67.99.86,1.57.74,2.34-.74,4.19-8.99,2.34-9.82,7.1-.29,1.66.51,2.88,1.98,2.88,1.73,0,3.17-1.79,3.65-4.61.48-.54,1.12-.83,1.79-.83,1.22,0,1.98.9,1.76,2.08-.35,2.08-3.46,3.62-7.3,3.62ZM221.67,265.33c-.58,3.33,2.05,5.47,5.22,5.47,3.33,0,6.5-2.34,7.04-5.41.58-3.33-2.05-5.47-5.21-5.47-3.33,0-6.5,2.34-7.04,5.41ZM226.08,265.36c.45-2.56,1.57-5.22,2.66-5.22,1.22,0,1.38,2.69.93,5.22-.45,2.56-1.57,5.22-2.66,5.22-1.22,0-1.38-2.69-.93-5.22ZM231.4,260.02c1.02-2.78,2.53-4.83,4.32-4.83,1.22,0,1.95.93,1.73,2.14-.1.67-.51,1.28-1.12,1.63-1.41-.22-3.84.16-4.7,1.18l-.22-.13Z"/> <path d="M253.73,258.13c.7-4.03-.9-6.94-3.78-6.94l.06-.35c.54-.16,1.12-.22,1.82-.22,4.83,0,7.68,3.14,6.91,7.49-.74,4.19-4.42,7.14-9.02,7.14-.83,0-1.73-.06-2.98-.26l-.93,5.31c-.32,1.79,0,3.46,1.25,4.1l-.03.22h-8.35l.03-.22c1.5-.64,2.4-2.3,2.72-4.1l2.66-15.14c.32-1.79,0-3.46-1.25-4.1l.03-.22h6.37l-2.43,13.79c3.58,0,6.21-2.46,6.91-6.5Z"/> <path d="M259.94,265.87c.35-1.95-.26-2.72-1.44-2.98l.03-.22,6.59-2.5h.22l-.74,4.16c1.09-1.7,3.04-4.38,4.83-4.38,1.22,0,1.92,1.02,1.7,2.37-.19,1.12-1.02,2.08-2.08,2.3-.48-.8-1.22-1.18-2.02-1.18s-1.79.45-2.53,1.31l-1.15,6.66c-.32,1.79.19,2.34,1.44,2.98l-.03.22h-8.35l.03-.22c1.5-.64,2.21-1.18,2.53-2.98l.96-5.54Z"/> <path d="M277.38,260.18c-1.12.74-2.08,2.85-2.53,5.44-.06.29-.13.58-.13.86,2.59-.9,3.78-2.02,4.1-3.9.22-1.15-.1-2.02-.8-2.4l.03-.22c2.82,0,4.83,1.47,4.48,3.33-.42,2.4-3.01,3.52-7.81,3.42-.42,3.65.74,6.08,2.94,6.08.93,0,1.92-.45,2.82-1.34h.22c-.77,1.95-3.04,3.39-5.44,3.39-3.68,0-5.76-3.26-4.99-7.68.74-4.22,3.71-7.2,7.14-7.2l-.03.22Z"/> <path d="M287.52,274.83c-3.07,0-5.25-1.47-4.93-3.33.19-1.15,1.28-2.02,2.5-2.02.74,0,1.44.32,1.73.83-1.12,2.27-.77,4.26.74,4.26,1.18,0,2.24-.96,2.5-2.24.61-3.62-6.88-2.66-5.98-7.71.45-2.56,2.66-4.45,5.47-4.67l-.03.22c-1.12.22-1.73.93-1.89,1.98-.7,3.97,7.33,3.07,6.46,8-.48,2.69-3.17,4.67-6.56,4.67ZM290.18,260.18c1.34.51,1.6,2.37.7,4.32.26.51.77.8,1.5.8,1.18,0,2.24-.9,2.46-2.05.32-1.86-1.7-3.3-4.64-3.3l-.03.22Z"/> <path d="M300.26,274.83c-3.07,0-5.25-1.47-4.93-3.33.19-1.15,1.28-2.02,2.5-2.02.74,0,1.44.32,1.73.83-1.12,2.27-.77,4.26.74,4.26,1.18,0,2.24-.96,2.5-2.24.61-3.62-6.88-2.66-5.98-7.71.45-2.56,2.66-4.45,5.47-4.67l-.03.22c-1.12.22-1.73.93-1.89,1.98-.7,3.97,7.33,3.07,6.46,8-.48,2.69-3.17,4.67-6.56,4.67ZM302.91,260.18c1.34.51,1.6,2.37.7,4.32.26.51.77.8,1.5.8,1.18,0,2.24-.9,2.46-2.05.32-1.86-1.7-3.3-4.64-3.3l-.03.22Z"/> </g> <g> <path d="M139.5,291.54h-4.12v-7.58h.88v6.81h3.24v.77Z"/> <path d="M146.15,291.54h-3.96v-7.58h3.93v.77h-3.04v2.35h2.93v.77h-2.93v2.93h3.08v.77Z"/> <path d="M153.73,284.68h-2.34v6.86h-.88v-6.86h-2.35v-.71h5.56v.71Z"/> <path d="M160.55,284.68h-2.34v6.86h-.88v-6.86h-2.35v-.71h5.56v.71Z"/> <path d="M166.62,291.54h-3.96v-7.58h3.93v.77h-3.04v2.35h2.93v.77h-2.93v2.93h3.08v.77Z"/> <path d="M174.41,291.54h-1.1l-2.22-3.44h-.98v3.44h-.88v-7.58h2.14c.72,0,1.29.17,1.71.52.42.35.63.83.63,1.46,0,.46-.15.87-.46,1.23-.3.36-.72.6-1.26.73l2.42,3.63ZM170.11,287.33h1.11c.47,0,.84-.13,1.13-.38.29-.25.44-.57.44-.95,0-.84-.52-1.27-1.55-1.27h-1.13v2.6Z"/> <path d="M179.84,284.8c-.45-.15-.88-.23-1.28-.23-.46,0-.83.1-1.12.31-.29.21-.43.51-.43.89,0,.46.38.86,1.13,1.21.56.26.93.44,1.11.54s.36.24.55.41c.19.17.34.38.45.62.11.24.17.51.17.8,0,.74-.25,1.31-.74,1.72s-1.08.61-1.75.61-1.22-.13-1.71-.39l.18-.76c.58.26,1.08.39,1.51.39.5,0,.9-.13,1.21-.39s.45-.62.45-1.07c0-.34-.1-.62-.3-.86-.2-.23-.56-.47-1.09-.72-.54-.25-.9-.42-1.06-.51-.16-.09-.32-.22-.48-.38-.16-.16-.28-.34-.37-.54-.09-.2-.13-.42-.13-.65,0-.63.23-1.12.68-1.47s1.02-.53,1.71-.53c.5,0,1.01.08,1.5.23l-.2.75Z"/> <path d="M192.25,293.6h-.83v-9.63h.83v9.63Z"/> <path d="M207.71,291.54h-4.12v-7.58h.88v6.81h3.24v.77Z"/> <path d="M215.35,291.54h-.92l-.84-2.65h-2.49l-.85,2.65h-.91l2.48-7.58h1.06l2.48,7.58ZM213.34,288.12l-.99-3.14-.99,3.14h1.98Z"/> <path d="M221.97,283.96l-2.37,4.33v3.24h-.88v-3.24l-2.37-4.33h.99l1.81,3.41,1.82-3.41h.99Z"/> <path d="M225.96,283.82c.85,0,1.5.34,1.94,1.01.45.67.67,1.65.67,2.93s-.22,2.25-.67,2.92c-.44.67-1.09,1.01-1.94,1.01s-1.49-.33-1.94-1.01c-.45-.67-.67-1.65-.67-2.92s.22-2.25.67-2.93c.44-.67,1.09-1.01,1.94-1.01ZM225.96,290.91c1.12,0,1.68-1.05,1.68-3.16s-.56-3.16-1.68-3.16c-.54,0-.96.27-1.24.82-.29.55-.43,1.33-.43,2.34s.14,1.81.42,2.35.7.81,1.25.81Z"/> <path d="M234.98,289.15c0,.88-.18,1.52-.53,1.92s-.9.61-1.62.61c-1.46,0-2.2-.84-2.2-2.51v-5.21h.88v5.13c0,1.21.44,1.81,1.32,1.81.44,0,.76-.14.97-.43.21-.29.31-.75.31-1.4v-5.12h.88v5.19Z"/> <path d="M242.41,284.68h-2.34v6.86h-.88v-6.86h-2.35v-.71h5.56v.71Z"/> <path d="M248.05,284.8c-.45-.15-.88-.23-1.28-.23-.46,0-.83.1-1.12.31-.29.21-.43.51-.43.89,0,.46.38.86,1.13,1.21.56.26.93.44,1.11.54s.36.24.55.41c.19.17.34.38.45.62.11.24.17.51.17.8,0,.74-.25,1.31-.74,1.72s-1.08.61-1.75.61-1.22-.13-1.71-.39l.18-.76c.58.26,1.08.39,1.51.39.5,0,.9-.13,1.21-.39s.45-.62.45-1.07c0-.34-.1-.62-.3-.86-.2-.23-.56-.47-1.09-.72-.54-.25-.9-.42-1.06-.51-.16-.09-.32-.22-.48-.38-.16-.16-.28-.34-.37-.54-.09-.2-.13-.42-.13-.65,0-.63.23-1.12.68-1.47s1.02-.53,1.71-.53c.5,0,1.01.08,1.5.23l-.2.75Z"/> <path d="M260.47,293.6h-.83v-9.63h.83v9.63Z"/> <path d="M275.41,291.54h-3.44v-.77h1.31v-6.04h-1.31v-.77h3.44v.77h-1.26v6.04h1.26v.77Z"/> <path d="M282.83,291.54h-.98l-2.72-5.98v5.98h-.88v-7.58h.98l2.73,5.93v-5.93h.87v7.58Z"/> <path d="M290.55,291.54h-1.11l-2.56-3.72-.8.87v2.85h-.88v-7.58h.88v3.63l3.36-3.63h1.02l-2.96,3.2,3.06,4.38Z"/> </g> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#2847a8" x="313.89" y="418.57" width="76.67" height="30.6"/> <rect fill="none" stroke-miterlimit="10" stroke-width="2" stroke="#203d91" x="318.92" y="423.45" width="66.1" height="20.84"/> <rect stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#233e8f" x="36.81" y="329.41" width="268.49" height="128.76"/> <rect fill="#fce9c3" stroke="#000" stroke-miterlimit="10" stroke-width="2" x="51.21" y="323.71" width="239.34" height="120.58"/>`;
+ const PP_AWNING=`<g> <path stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="#fefead" d="M436.23,330.54c-11.24,14.09-22.36,17.08-33.27,0-9.62,14.42-20.51,16.71-33.4,0-11.18,17.19-21.13,13.84-30.45,0-11.23,14.5-22.53,16.5-33.4,0-11.85,11.66-23.39,14.13-34.38,0-10.15,13.71-20.3,12.05-30.45,0-9.7,13.61-20.64,12.13-32.91,0-11.89,14.47-22.25,11.16-31.93,0-13.15,14.51-23.79,10.99-33.4,0-10.41,11.79-20.74,13.68-30.95,0-11.98,13.11-22.89,12.35-32.91,0-9.26,10.91-19.24,14.42-30.95,0-11.22,12.13-22.05,13.18-32.38,0v-25.37s420.78,0,420.78,0v25.37Z"/> <g clip-path="url(#pp-clippath)"> <g> <rect fill="#fff" x="12.58" y="293.39" width="15.73" height="91.56"/> <rect fill="#fff" x="46.82" y="293.68" width="15.73" height="91.56"/> <rect fill="#fff" x="81.05" y="293.97" width="15.73" height="91.56"/> <rect fill="#fff" x="115.28" y="294.26" width="15.73" height="91.56"/> <rect fill="#fff" x="149.51" y="294.55" width="15.73" height="91.56"/> <rect fill="#fff" x="183.74" y="294.85" width="15.73" height="91.56"/> <rect fill="#fff" x="217.97" y="295.14" width="15.73" height="91.56"/> <rect fill="#fff" x="252.21" y="295.43" width="15.73" height="91.56"/> <rect fill="#fff" x="286.44" y="295.72" width="15.73" height="91.56"/> <rect fill="#fff" x="320.67" y="296.01" width="15.73" height="91.56"/> <rect fill="#fff" x="354.9" y="296.3" width="15.73" height="91.56"/> <rect fill="#fff" x="389.13" y="296.59" width="15.73" height="91.56"/> <rect fill="#fff" x="423.36" y="296.88" width="15.73" height="91.56"/> </g> </g> <line fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" x1="16.11" y1="305.17" x2="436.89" y2="305.17"/> </g>`;
+ const T=x=>`<g transform="translate(804 11)">${x}</g>`;
+ w+=T(PP_ART);
+ w+=`<path d="M862 352 Q974 362 1086 352" fill="none" stroke="${INK}" stroke-width="1.5"/>
+ <rect x="874" y="354" width="40" height="28" fill="#141a2b" stroke="${INK}" stroke-width="1.5"/><rect x="882" y="361" width="24" height="3" fill="#fff"/><rect x="882" y="368" width="24" height="3" fill="#fff"/>
+ <rect x="1030" y="354" width="40" height="28" fill="#a8d8f0" stroke="${INK}" stroke-width="1.5"/><rect x="1035" y="359" width="30" height="18" fill="#b31f24"/>
+ <rect x="872" y="414" width="58" height="41" fill="#9c6236" stroke="${INK}" stroke-width="1.5"/><path d="M872 427 H930 M872 441 H930" stroke="${INK}" stroke-width="1.2"/><rect x="895" y="418" width="12" height="4" fill="#f6d44a"/><rect x="895" y="432" width="12" height="4" fill="#f6d44a"/><rect x="895" y="446" width="12" height="4" fill="#f6d44a"/>
+ <image href="keeper-press.webp" x="955" y="353" width="40.5" height="102"/>`;
+ w+=`<g class="shop" id="shop-press">`+lights(830,1230,234,5,12)+`<circle cx="830" cy="234" r="3.2" fill="${INK}"/><circle cx="1230" cy="234" r="3.2" fill="${INK}"/>
  <g class="door" id="door-press" data-enter="press" role="button" tabindex="0" aria-label="Enter the Printing Press">
-  <rect class="frame" x="1106" y="334" width="122" height="136" fill="#16286b" stroke="${INK}" stroke-width="3"/>
-  <rect x="1118" y="346" width="98" height="72" fill="url(#gLit)" stroke="${INK}" stroke-width="2"/><line x1="1167" y1="346" x2="1167" y2="418" stroke="${INK}" stroke-width="2"/>
-  <rect x="1118" y="424" width="98" height="40" fill="#2747a8" stroke="${INK}" stroke-width="2"/><rect x="1126" y="430" width="82" height="28" fill="none" stroke="#1b2f78" stroke-width="2"/>
-  <circle cx="1208" cy="420" r="5" fill="#f6d44a" stroke="${INK}" stroke-width="1.5"/>
-  <g class="tapsign"><path d="M1148 352 L1167 342 L1186 352" fill="none" stroke="${INK}" stroke-width="1.5"/><rect x="1130" y="352" width="74" height="36" rx="9" fill="#fff" stroke="${INK}" stroke-width="2"/><text x="1167" y="368" text-anchor="middle" font-family="${SANS}" font-size="12" font-weight="700" fill="#c2452f">OPEN</text><text x="1167" y="381" text-anchor="middle" font-family="${SANS}" font-size="9.5" font-weight="500" fill="${INK}">tap to enter</text></g>
-  <circle class="ring" cx="1167" cy="408" r="22"/>
+  <rect class="frame" x="1109" y="333" width="93" height="136" fill="#000" fill-opacity="0" stroke="none"/>
+  <g class="tapsign"><rect x="1121" y="343" width="70" height="38" rx="9" fill="#fff" stroke="${INK}" stroke-width="2"/><text x="1156" y="359" text-anchor="middle" font-family="${SANS}" font-size="12" font-weight="700" fill="#c2452f">OPEN</text><text x="1156" y="373" text-anchor="middle" font-family="${SANS}" font-size="9.5" font-weight="500" fill="${INK}">tap to enter</text></g>
+  <circle class="ring" cx="1156" cy="400" r="20"/>
  </g>
- ${shutter(822,326,416,144,"cpPress",0)}</g>`;
- w+=F(awning(800,318,460,24,10,"url(#pYB)")+lantern(1094,364,-1)+pool(1080,70)+pot(1236,470,"#2f8f6b"))+bracket(1260,190,1,"P","#2747a8","#f6d44a");
+ ${shutter(841,317,361,152,"cpPress",0)}</g>`;
+ w+=T(PP_AWNING);
+ w+=lantern(1240,364,-1)+pot(1272,470,"#2f8f6b")+bracket(1240,150,1,"P","#2747a8","#f6d44a");
 }
 
 /* wall with posters */
-w+=F(`<rect x="1292" y="340" width="172" height="130" fill="#ebe7df" stroke="${INK}" stroke-width="2.5"/><rect x="1286" y="328" width="184" height="14" fill="#b6b0a2" stroke="${INK}" stroke-width="2"/>
+w+=F(`<rect x="1292" y="340" width="172" height="130" fill="#ebe7df" stroke="${INK}" stroke-width="2"/><rect x="1286" y="328" width="184" height="14" fill="#b6b0a2" stroke="${INK}" stroke-width="2"/>
 <polygon points="1306,356 1352,352 1354,414 1310,418" fill="#f6d44a" stroke="${INK}" stroke-width="2"/>
 <polygon points="1362,350 1404,354 1400,408 1360,404" fill="#c2452f" stroke="${INK}" stroke-width="2"/><circle cx="1382" cy="378" r="12" fill="#fffdf6"/>
 <polygon points="1410,362 1452,358 1454,416 1412,420 1418,400" fill="#2747a8" stroke="${INK}" stroke-width="2"/><path d="M1420 372 L1442 404 M1442 372 L1420 404" stroke="#f6d44a" stroke-width="4"/>`+vine(1300,342,60))+
@@ -925,19 +919,19 @@ w+=F(`<rect x="1292" y="340" width="172" height="130" fill="#ebe7df" stroke="${I
  a+=win(1512,124,150,96,4,2,"#f8e3d2",.45)+railing(1500,186,174)+flowers(1506,182,162)+vine(1510,226,90)+vine(1660,224,70);
  a+=`<rect x="1712" y="120" width="22" height="104" fill="#2f8f6b" stroke="${INK}" stroke-width="2"/><rect x="1838" y="120" width="22" height="104" fill="#2f8f6b" stroke="${INK}" stroke-width="2"/>`+win(1738,124,96,96,2,2,"#f8e3d2",.3);
  a+=`<path d="M1716 130 h14 M1716 144 h14 M1716 158 h14 M1716 172 h14 M1716 186 h14 M1716 200 h14 M1842 130 h14 M1842 144 h14 M1842 158 h14 M1842 172 h14 M1842 186 h14 M1842 200 h14" stroke="#1f6b4f" stroke-width="2"/>`;
- a+=`<rect x="1494" y="322" width="392" height="148" fill="url(#gWood)" stroke="${INK}" stroke-width="3"/>
- <rect x="1504" y="340" width="240" height="116" fill="#3a120c" stroke="${INK}" stroke-width="3"/><rect x="1508" y="344" width="232" height="108" fill="url(#gLit)"/>
+ a+=`<rect x="1494" y="322" width="392" height="148" fill="url(#gWood)" stroke="${INK}" stroke-width="2"/>
+ <rect x="1504" y="340" width="240" height="116" fill="#3a120c" stroke="${INK}" stroke-width="2"/><rect x="1508" y="344" width="232" height="108" fill="url(#gLit)"/>
  <rect x="1520" y="352" width="58" height="88" fill="#d9a441" stroke="${INK}" stroke-width="2"/><image href="netflix-small.jpg" x="1525" y="357" width="48" height="78" preserveAspectRatio="xMidYMid slice"/>
  <rect x="1590" y="360" width="52" height="44" fill="#2a2f3d" stroke="${INK}" stroke-width="2"/><rect x="1596" y="366" width="40" height="32" fill="#8fc1a8"/>
  <rect x="1590" y="410" width="52" height="38" fill="#d9a441" stroke="${INK}" stroke-width="2"/><rect x="1596" y="416" width="40" height="26" fill="#f2a7b8"/>
  <rect x="1656" y="354" width="72" height="92" fill="#fffdf6" stroke="${INK}" stroke-width="2"/><rect x="1664" y="362" width="56" height="76" fill="#f6d44a"/><circle cx="1692" cy="396" r="17" fill="#c2452f"/>
  <polygon points="1540,344 1570,344 1530,452 1508,452 1508,420" fill="#fff" opacity=".18"/>
- <rect x="1758" y="334" width="118" height="136" fill="#7a1d12" stroke="${INK}" stroke-width="3"/><rect x="1770" y="346" width="94" height="70" fill="url(#gLit)" stroke="${INK}" stroke-width="2"/><rect x="1770" y="424" width="94" height="40" fill="#8f2a1c" stroke="${INK}" stroke-width="2"/><circle cx="1858" cy="420" r="5" fill="#d9a441" stroke="${INK}" stroke-width="1.5"/>`;
+ <rect x="1758" y="334" width="118" height="136" fill="#7a1d12" stroke="${INK}" stroke-width="2"/><rect x="1770" y="346" width="94" height="70" fill="url(#gLit)" stroke="${INK}" stroke-width="2"/><rect x="1770" y="424" width="94" height="40" fill="#8f2a1c" stroke="${INK}" stroke-width="2"/><circle cx="1858" cy="420" r="5" fill="#d9a441" stroke="${INK}" stroke-width="1.5"/>`;
  w+=F(a);
- w+=`<g class="shop" id="shop-framing">`+lights(1500,1880,232,9,10)+S(1690,246,"Framing Shop","ILLUSTRATION · POSTERS","#fbefe0","#8f2a1c",36,370,62,"#d9a441")+
- `<g transform="translate(1686 358) scale(.76)">${MINI_FR}</g>
+ w+=`<g class="shop" id="shop-framing">`+S(1690,250,"Framing Shop","ILLUSTRATION · POSTERS","#fbefe0","#8f2a1c",30,340,62)+lights(1504,1876,236,6,10)+`<circle cx="1504" cy="236" r="3.2" fill="${INK}"/><circle cx="1876" cy="236" r="3.2" fill="${INK}"/>`+
+ `<image href="keeper-framing.webp" x="1694" y="350" width="32.3" height="102"/>
  <g class="door" id="door-framing" data-enter="framing" role="button" tabindex="0" aria-label="Enter the Framing Shop">
-  <rect class="frame" x="1758" y="334" width="118" height="136" fill="#000" fill-opacity="0" stroke="${INK}" stroke-width="3"/>
+  <rect class="frame" x="1758" y="334" width="118" height="136" fill="#000" fill-opacity="0" stroke="${INK}" stroke-width="2"/>
   <g class="tapsign"><path d="M1798 352 L1817 342 L1836 352" fill="none" stroke="${INK}" stroke-width="1.5"/><rect x="1780" y="352" width="74" height="36" rx="9" fill="#fff" stroke="${INK}" stroke-width="2"/><text x="1817" y="368" text-anchor="middle" font-family="${SANS}" font-size="12" font-weight="700" fill="#8f2a1c">OPEN</text><text x="1817" y="381" text-anchor="middle" font-family="${SANS}" font-size="9.5" font-weight="500" fill="${INK}">tap to enter</text></g>
   <circle class="ring" cx="1817" cy="410" r="22"/>
  </g>${shutter(1500,330,380,140,"cpFrame",0)}</g>`;
@@ -946,27 +940,27 @@ w+=F(`<rect x="1292" y="340" width="172" height="130" fill="#ebe7df" stroke="${I
 
 /* chai stall */
 w+=F(`<rect x="1944" y="340" width="6" height="44" fill="${INK}"/><rect x="2072" y="340" width="6" height="44" fill="${INK}"/>
-<rect x="1940" y="382" width="142" height="88" fill="url(#gTeal)" stroke="${INK}" stroke-width="2.5"/><rect x="1940" y="382" width="142" height="12" fill="#f6d44a" stroke="${INK}" stroke-width="2"/>
+<rect x="1940" y="382" width="142" height="88" fill="url(#gTeal)" stroke="${INK}" stroke-width="2"/><rect x="1940" y="382" width="142" height="12" fill="#f6d44a" stroke="${INK}" stroke-width="2"/>
 ${awning(1930,322,162,20,5,"url(#pRC)")}<rect x="1962" y="294" width="98" height="28" rx="9" fill="#fff4cf" stroke="${INK}" stroke-width="2"/>
-<circle cx="1990" cy="368" r="13" fill="#c9ccd3" stroke="${INK}" stroke-width="2"/><path d="M2002 364 L2014 356" stroke="${INK}" stroke-width="3"/><rect x="2030" y="368" width="9" height="14" fill="#fff6dc" stroke="${INK}" stroke-width="1.5"/><rect x="2044" y="368" width="9" height="14" fill="#fff6dc" stroke="${INK}" stroke-width="1.5"/>
+<circle cx="1990" cy="368" r="13" fill="#c9ccd3" stroke="${INK}" stroke-width="2"/><path d="M2002 364 L2014 356" stroke="${INK}" stroke-width="2"/><rect x="2030" y="368" width="9" height="14" fill="#fff6dc" stroke="${INK}" stroke-width="1.5"/><rect x="2044" y="368" width="9" height="14" fill="#fff6dc" stroke="${INK}" stroke-width="1.5"/>
 <rect x="1956" y="448" width="22" height="22" fill="#c2452f" stroke="${INK}" stroke-width="2"/><rect x="2048" y="448" width="22" height="22" fill="#2747a8" stroke="${INK}" stroke-width="2"/>`)+
 `<text x="2011" y="315" text-anchor="middle" font-family="${SERIF}" font-size="20" fill="#8f2a1c">Chai</text>`;
 
 /* ================= STATIONERY ================= */
-{let a=wall(2120,82,420,388,"gSage","#12452f66")+`<polygon points="2240,84 2330,40 2420,84" fill="#d8ead0" stroke="${INK}" stroke-width="3"/><circle cx="2330" cy="68" r="12" fill="url(#gWin)" stroke="${INK}" stroke-width="2.5"/>`+cornice(2120,76,420,"#e3f0db");
+{let a=wall(2120,82,420,388,"gSage","#12452f66")+`<polygon points="2240,84 2330,40 2420,84" fill="#d8ead0" stroke="${INK}" stroke-width="2"/><circle cx="2330" cy="68" r="12" fill="url(#gWin)" stroke="${INK}" stroke-width="2"/>`+cornice(2120,76,420,"#e3f0db");
  for(const x of[2152,2286,2420])a+=win(x,124,88,104,2,3,"#f6f1e6",.4)+flowers(x-6,234,100);
- a+=`<rect x="2134" y="326" width="392" height="144" fill="url(#gGreen)" stroke="${INK}" stroke-width="3"/>
- <rect x="2144" y="342" width="236" height="114" fill="#0e2a1e" stroke="${INK}" stroke-width="3"/><rect x="2148" y="346" width="228" height="106" fill="url(#gLit)"/>
+ a+=`<rect x="2134" y="326" width="392" height="144" fill="url(#gGreen)" stroke="${INK}" stroke-width="2"/>
+ <rect x="2144" y="342" width="236" height="114" fill="#0e2a1e" stroke="${INK}" stroke-width="2"/><rect x="2148" y="346" width="228" height="106" fill="url(#gLit)"/>
  <rect x="2160" y="404" width="60" height="40" fill="#fffdf6" stroke="${INK}" stroke-width="2"/><path d="M2160 404 L2190 426 L2220 404" fill="none" stroke="${INK}" stroke-width="2"/>
  <rect x="2232" y="410" width="54" height="34" fill="#f6d44a" stroke="${INK}" stroke-width="2"/><rect x="2238" y="390" width="44" height="20" fill="#2747a8" stroke="${INK}" stroke-width="2"/>
  <rect x="2300" y="364" width="62" height="80" fill="#fffdf6" stroke="${INK}" stroke-width="2"/><rect x="2308" y="372" width="46" height="64" fill="none" stroke="#d9a441" stroke-width="2"/>
  <polygon points="2190,346 2218,346 2176,452 2150,452" fill="#fff" opacity=".18"/>
- <rect x="2398" y="336" width="116" height="134" fill="#12452f" stroke="${INK}" stroke-width="3"/><rect x="2410" y="348" width="92" height="68" fill="url(#gLit)" stroke="${INK}" stroke-width="2"/><rect x="2410" y="424" width="92" height="40" fill="#1f6b4f" stroke="${INK}" stroke-width="2"/>`;
+ <rect x="2398" y="336" width="116" height="134" fill="#12452f" stroke="${INK}" stroke-width="2"/><rect x="2410" y="348" width="92" height="68" fill="url(#gLit)" stroke="${INK}" stroke-width="2"/><rect x="2410" y="424" width="92" height="40" fill="#1f6b4f" stroke="${INK}" stroke-width="2"/>`;
  w+=F(a);
- w+=`<g class="shop" id="shop-stationery">`+S(2330,250,"Stationery","PAPER · POST · INVITES","#f2a7b8","#12452f",34,370,68)+
- `<g transform="translate(2232 360) scale(.76)">${MINI_ST}</g>
+ w+=`<g class="shop" id="shop-stationery">`+S(2330,250,"Stationery","PAPER · POST · INVITES","#f2a7b8","#12452f",32,340,64)+
+ `<image href="keeper-stationery.webp" x="2240" y="350" width="32.5" height="102"/>
  <g class="door" id="door-stationery" data-enter="stationery" role="button" tabindex="0" aria-label="Enter the Stationery shop">
-  <rect class="frame" x="2398" y="336" width="116" height="134" fill="#000" fill-opacity="0" stroke="${INK}" stroke-width="3"/>
+  <rect class="frame" x="2398" y="336" width="116" height="134" fill="#000" fill-opacity="0" stroke="${INK}" stroke-width="2"/>
   <g class="tapsign"><path d="M2437 352 L2456 342 L2475 352" fill="none" stroke="${INK}" stroke-width="1.5"/><rect x="2419" y="352" width="74" height="36" rx="9" fill="#fff" stroke="${INK}" stroke-width="2"/><text x="2456" y="368" text-anchor="middle" font-family="${SANS}" font-size="12" font-weight="700" fill="#1f6b4f">OPEN</text><text x="2456" y="381" text-anchor="middle" font-family="${SANS}" font-size="9.5" font-weight="500" fill="${INK}">tap to enter</text></g>
   <circle class="ring" cx="2456" cy="410" r="22"/>
  </g>${shutter(2140,334,380,136,"cpStat",0)}</g>`;
@@ -984,19 +978,19 @@ ${awning(1930,322,162,20,5,"url(#pRC)")}<rect x="1962" y="294" width="98" height
 {let bunt="",cols=["#c2452f","#2747a8","#2f8f6b","#f2a7b8"];for(let i=0;i<10;i++){const x=2772+i*36,y=104+Math.sin(i/9*Math.PI)*12;bunt+=`<path d="M${x} ${y} l18 0 l-9 22 Z" fill="${cols[i%4]}" stroke="${INK}" stroke-width="1.5"/>`;}
  let a=wall(2760,100,390,370,"gYell","#8a5a0866")+cornice(2760,90,390,"#fff4d2")+`<path d="M2766 104 Q2955 128 3144 104" fill="none" stroke="${INK}" stroke-width="2"/>`+bunt;
  a+=win(2792,144,96,92,2,2,"#fff8e6",.5)+flowers(2786,246,108)+win(3022,144,96,92,2,2,"#fff8e6",.35)+flowers(3016,246,108);
- a+=`<circle cx="2955" cy="186" r="36" fill="#fff8e6" stroke="${INK}" stroke-width="2.5"/><path d="M2955 206 C2930 190 2936 168 2955 178 C2974 168 2980 190 2955 206 Z" fill="#c2452f" stroke="${INK}" stroke-width="2"/>`;
- a+=`<rect x="2774" y="322" width="362" height="148" fill="url(#gTeal)" stroke="${INK}" stroke-width="3"/>
- <rect x="2784" y="340" width="206" height="116" fill="#0b2a33" stroke="${INK}" stroke-width="3"/><rect x="2788" y="344" width="198" height="108" fill="url(#gLit)"/>
+ a+=`<circle cx="2955" cy="186" r="36" fill="#fff8e6" stroke="${INK}" stroke-width="2"/><path d="M2955 206 C2930 190 2936 168 2955 178 C2974 168 2980 190 2955 206 Z" fill="#c2452f" stroke="${INK}" stroke-width="2"/>`;
+ a+=`<rect x="2774" y="322" width="362" height="148" fill="url(#gTeal)" stroke="${INK}" stroke-width="2"/>
+ <rect x="2784" y="340" width="206" height="116" fill="#0b2a33" stroke="${INK}" stroke-width="2"/><rect x="2788" y="344" width="198" height="108" fill="url(#gLit)"/>
  <circle cx="2818" cy="404" r="15" fill="#f2a7b8" stroke="${INK}" stroke-width="2"/><circle cx="2852" cy="414" r="11" fill="#2f8f6b" stroke="${INK}" stroke-width="2"/>
  <path d="M2890 384 l7 15 16 2 -12 11 3 16 -14 -8 -14 8 3 -16 -12 -11 16 -2 Z" fill="#f6d44a" stroke="${INK}" stroke-width="2"/>
  <rect x="2932" y="378" width="40" height="56" fill="#fffdf6" stroke="${INK}" stroke-width="2"/><circle cx="2944" cy="394" r="6" fill="#c2452f"/><circle cx="2960" cy="410" r="6" fill="#2747a8"/><circle cx="2946" cy="424" r="5" fill="#2f8f6b"/>
  <polygon points="2830,344 2858,344 2814,452 2788,452" fill="#fff" opacity=".18"/>
- <rect x="3010" y="334" width="116" height="136" fill="#124955" stroke="${INK}" stroke-width="3"/><rect x="3022" y="346" width="92" height="68" fill="url(#gLit)" stroke="${INK}" stroke-width="2"/><rect x="3022" y="424" width="92" height="40" fill="#1f6f86" stroke="${INK}" stroke-width="2"/>`;
+ <rect x="3010" y="334" width="116" height="136" fill="#124955" stroke="${INK}" stroke-width="2"/><rect x="3022" y="346" width="92" height="68" fill="url(#gLit)" stroke="${INK}" stroke-width="2"/><rect x="3022" y="424" width="92" height="40" fill="#1f6f86" stroke="${INK}" stroke-width="2"/>`;
  w+=F(a);
- w+=`<g class="shop" id="shop-gift">`+lights(2776,3134,232,8,9)+S(2955,250,"Gift Shop","","#2747a8","#f6d44a",36,320,58)+
- `<g transform="translate(2850 358) scale(.76)">${MINI_GF}</g>
+ w+=`<g class="shop" id="shop-gift">`+S(2955,250,"Gift Shop","","#2747a8","#f6d44a",32,300,58)+lights(2780,3130,236,6,9)+`<circle cx="2780" cy="236" r="3.2" fill="${INK}"/><circle cx="3130" cy="236" r="3.2" fill="${INK}"/>`+
+ `<image href="keeper-gift.webp" x="2860" y="350" width="30.1" height="102"/>
  <g class="door" id="door-gift" data-enter="gift" role="button" tabindex="0" aria-label="Enter the Gift Shop">
-  <rect class="frame" x="3010" y="334" width="116" height="136" fill="#000" fill-opacity="0" stroke="${INK}" stroke-width="3"/>
+  <rect class="frame" x="3010" y="334" width="116" height="136" fill="#000" fill-opacity="0" stroke="${INK}" stroke-width="2"/>
   <g class="tapsign"><path d="M3049 352 L3068 342 L3087 352" fill="none" stroke="${INK}" stroke-width="1.5"/><rect x="3031" y="352" width="74" height="36" rx="9" fill="#fff" stroke="${INK}" stroke-width="2"/><text x="3068" y="368" text-anchor="middle" font-family="${SANS}" font-size="12" font-weight="700" fill="#175a6e">OPEN</text><text x="3068" y="381" text-anchor="middle" font-family="${SANS}" font-size="9.5" font-weight="500" fill="${INK}">tap to enter</text></g>
   <circle class="ring" cx="3068" cy="410" r="22"/>
  </g>${shutter(2780,330,350,140,"cpGift",0)}</g>`;
@@ -1005,18 +999,18 @@ ${awning(1930,322,162,20,5,"url(#pRC)")}<rect x="1962" y="294" width="98" height
 
 /* hoarding at the end */
 {let seams="";for(let x=3340;x<3760;x+=140)seams+=`<line x1="${x}" y1="300" x2="${x}" y2="442" stroke="#a9834e" stroke-width="2"/>`;
- w+=F(`<rect x="3200" y="300" width="560" height="170" fill="#d9b27a" stroke="${INK}" stroke-width="3"/>${seams}
-<rect x="3200" y="442" width="560" height="26" fill="url(#pBar)" stroke="${INK}" stroke-width="2.5"/>
+ w+=F(`<rect x="3200" y="300" width="560" height="170" fill="#d9b27a" stroke="${INK}" stroke-width="2"/>${seams}
+<rect x="3200" y="442" width="560" height="26" fill="url(#pBar)" stroke="${INK}" stroke-width="2"/>
 <path d="M3226 470 l14 -44 l14 44 Z" fill="#f08a24" stroke="${INK}" stroke-width="2"/><rect x="3233" y="446" width="14" height="6" fill="#fff"/>
 <path d="M3730 470 l14 -44 l14 44 Z" fill="#f08a24" stroke="${INK}" stroke-width="2"/><rect x="3737" y="446" width="14" height="6" fill="#fff"/>`)+
-`<text x="3480" y="372" text-anchor="middle" font-family="${SERIF}" font-size="44" fill="#2747a8">More shops coming</text>
-<text x="3480" y="410" text-anchor="middle" font-family="${SANS}" font-weight="700" font-size="16" letter-spacing="4" fill="#c2452f">OPENING IN SEMESTER 2</text>`;}
+`<text x="3480" y="372" text-anchor="middle" font-family="${SIGNF}" font-style="italic" font-weight="800" font-size="42" fill="#2747a8">More shops coming</text>
+<text x="3480" y="408" text-anchor="middle" font-family="${MONO}" font-size="15" letter-spacing="2" fill="#c2452f">OPENING IN SEMESTER 2</text>`;}
 
 /* poles and wires, placed in the gaps between shops */
-{const poles=[262,1272,2101,2752,3172,3792];
+{const poles=[262,1466,2101,2752,3172,3792];
  poles.forEach((x,i)=>{w+=`<rect x="${x}" y="22" width="14" height="560" fill="${INK}"/><rect x="${x+3}" y="22" width="3" height="560" fill="#3a3550"/><rect x="${x-38}" y="44" width="90" height="9" fill="${INK}"/>`;
   [x-32,x+40].forEach(cx=>w+=`<rect x="${cx-3}" y="35" width="8" height="9" fill="#d9dee8" stroke="${INK}" stroke-width="1.5"/>`);
-  if(i<poles.length-1){const n=poles[i+1],m=(x+n)/2;w+=`<path d="M${x-30} 38 Q${m} 92 ${n-30} 38" fill="none" stroke="${INK}" stroke-width="2.5"/><path d="M${x+44} 38 Q${m} 84 ${n+44} 38" fill="none" stroke="${INK}" stroke-width="2.5"/>`;}});}
+  if(i<poles.length-1){const n=poles[i+1],m=(x+n)/2;w+=`<path d="M${x-30} 38 Q${m} 92 ${n-30} 38" fill="none" stroke="${INK}" stroke-width="2"/><path d="M${x+44} 38 Q${m} 84 ${n+44} 38" fill="none" stroke="${INK}" stroke-width="2"/>`;}});}
 $("#worldart").innerHTML=w;
 
 /* ---------- foreground plants ---------- */
@@ -1168,7 +1162,6 @@ $("#send-ig").addEventListener("click",()=>{const t=noteText();try{navigator.cli
 document.querySelectorAll("[data-stickers]").forEach(b=>b.addEventListener("click",()=>toast("The stickers are still being printed. Soon you'll decorate your card with them.")));
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#receipt").hidden){e.stopImmediatePropagation();closeReceipt();}},true);
 /* ---------- opening shutter ---------- */
-$("#w-keeper").innerHTML=LOOK.gift;
 const welcome=$("#welcome");document.documentElement.style.overflow="hidden";
 function openShutter(){if(welcome.classList.contains("up"))return;welcome.classList.add("up");
   const done=()=>{welcome.hidden=true;if(!document.body.classList.contains("in-shop"))document.documentElement.style.overflow="";};
